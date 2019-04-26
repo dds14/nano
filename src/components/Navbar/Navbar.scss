@@ -1,8 +1,116 @@
-$background: #15d343;
+// global
+$accent: #37fdfc;
+$text-hover: 0.6;
+
+// nav only
+$nav-background: white;
+
+// tests
+$border-test-red: 3px solid red;
+$border-test-blue: 1px solid blue;
+$border-test-green: 1px solid green;
 
 .navbar {
+  // border: $border-test-red;
+  background-color: $nav-background;
   width: 100%;
   height: 10vh;
-  background-color: $background;
-  color: blue;
+  display: flex;
+  align-items: center;
+}
+
+.nav-right-side {
+  // border: $border-test-blue;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.nav-left-side {
+  // border: $border-test-green;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  // justify-content: flex-end;
+}
+
+.nav-brands {
+  // border: $border-test-blue;
+  display: flex;
+  width: 40%;
+  justify-content: center;
+  // margin-right: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+}
+
+.nav-brands:hover {
+  opacity: $text-hover;
+}
+
+.nav-influencer {
+  // border: $border-test-blue;
+  width: 20%;
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+}
+
+.nav-influencer:hover {
+  opacity: $text-hover;
+}
+
+.nav-login {
+  //   border: $border-test-blue;
+  display: flex;
+  width: 75%;
+  justify-content: flex-end;
+  margin-right: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+}
+
+.nav-login:hover {
+  opacity: $text-hover;
+}
+
+.nav-login:focus {
+  outline: none;
+}
+
+.nav-sign-up {
+  //   border: $border-test-blue;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 130px;
+  width: 25%;
+  border-radius: 45px;
+  background-color: $accent;
+  color: black;
+  font-size: 17px;
+  margin-top: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 25px;
+  padding-left: 15px;
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.nav-sign-up:hover {
+  //   background-color: #afeeee;
+  opacity: 0.5;
+  color: black;
+}
+
+.nav-sign-up:focus {
+  outline: none;
 }
