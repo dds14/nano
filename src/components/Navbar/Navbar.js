@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Navbar.scss";
+import logo from "../../Images/logo.png";
 
 export default class Navbars extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ export default class Navbars extends Component {
     return (
       <div className="navbar">
         <div className="nav-left-side">
+          <img src={logo} className="nav-logo" alt="logo" />
           <p className="nav-brands">Brands</p>
           <p className="nav-influencer">I'm an influencer</p>
         </div>
