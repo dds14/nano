@@ -15,7 +15,9 @@ export default class Navbars extends Component {
         </div>
         <div className="nav-right-side">
           <button className="nav-login">Login</button>
-          <button className="nav-sign-up">Sign up for free</button>
+          <button className="nav-sign-up">
+            <span className="sign-up-span">Sign up for free</span>
+          </button>
         </div>
       </div>
     );

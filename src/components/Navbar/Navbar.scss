@@ -1,14 +1,7 @@
-// global
-$accent: #37fdfc;
-$text-hover: 0.6;
+@import "../../variables.scss";
 
 // nav only
 $nav-background: white;
-
-// tests
-$border-test-red: 3px solid red;
-$border-test-blue: 1px solid blue;
-$border-test-green: 1px solid green;
 
 .navbar {
   // border: $border-test-red;
@@ -17,6 +10,8 @@ $border-test-green: 1px solid green;
   height: 10vh;
   display: flex;
   align-items: center;
+  // border-bottom: 3px solid red;
+  box-shadow: 1px 3px 5px #efefef;
 }
 
 .nav-right-side {
@@ -52,7 +47,7 @@ $border-test-green: 1px solid green;
 
 .nav-influencer {
   // border: $border-test-blue;
-  width: 20%;
+  width: 30%;
   display: flex;
   justify-content: flex-start;
   margin-right: 50px;
@@ -88,7 +83,7 @@ $border-test-green: 1px solid green;
   justify-content: flex-end;
   align-items: center;
   margin-right: 130px;
-  width: 25%;
+  width: 45%;
   border-radius: 45px;
   background-color: $accent;
   color: black;
@@ -102,7 +97,7 @@ $border-test-green: 1px solid green;
   letter-spacing: 2px;
   margin-bottom: 28px;
   opacity: 1;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .nav-sign-up:hover {
@@ -113,4 +108,10 @@ $border-test-green: 1px solid green;
 
 .nav-sign-up:focus {
   outline: none;
+}
+
+.sign-up-span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
