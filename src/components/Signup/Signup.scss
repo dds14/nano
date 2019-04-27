@@ -17,30 +17,101 @@
 
 .signup-header {
   margin-bottom: 20px;
+  font-size: 32px;
+  background: -webkit-linear-gradient(left, #37fdfc, #f0b5eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+placeholder {
+  padding-bottom: 10px;
 }
 
 .signup-form {
   display: flex;
+  background-color: white;
   height: 80vh;
-  border: 1px solid green;
+  //   border: 1px solid green;
+  width: 30vw;
+  height: 70vh;
+  border-radius: 25px;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
 
 .signup-username-input {
-  border: 1px solid blue;
+  border-bottom: 1px solid grey;
+  //   border-bottom-color: $accent;
   margin-bottom: 20px;
-  margin-left: 12px;
+  margin-top: 25px;
+  width: 12vw;
+
+  //   margin-left: 12px;
+}
+
+.signup-username-input:focus {
+  outline: none;
+}
+
+.signup-email-input {
+  //   border: 1px solid blue;
+  margin-bottom: 20px;
+  width: 12vw;
+  border-bottom: 1px solid grey;
+
+  //   border-bottom-color: $accent;
+  //   margin-left: 28px;
+}
+
+.signup-email-input:focus {
+  outline: none;
 }
 
 .signup-password-input {
-  border: 1px solid blue;
+  //   border: 1px solid blue;
   margin-bottom: 20px;
-  margin-left: 13px;
+  width: 12vw;
+  border-bottom: 1px solid grey;
+  margin-bottom: 50px;
+}
+
+.signup-password-input:focus {
+  outline: none;
 }
 
 .signup-form-submit-button {
-  border: 1px solid blue;
-  width: 5%;
+  //   border: 1px solid blue;
+  background: -webkit-linear-gradient(left, #37fdfc, #f0b5eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 35px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 45px;
+  //   width: 15%;
+  //   align-content: center;
+}
+
+.signup-form-submit-button:focus {
+  outline: none;
+}
+
+label {
+  display: inline-block;
+  //   float: left;
+  clear: left;
+  width: 125px;
+  text-align: right;
+}
+input {
+  display: inline-block;
+  //   float: right;
 }

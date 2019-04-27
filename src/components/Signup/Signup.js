@@ -16,14 +16,18 @@ export default class Signup extends Component {
     return (
       <div className="signup">
         <form className="signup-form">
-          <h1 className="signup-header">Signup</h1>
+          <h1 className="signup-header">SIGN UP</h1>
           <label>
-            Username
-            <input className="signup-username-input" />
+            {/* Username */}
+            <input className="signup-username-input" placeholder="USERNAME" />
+          </label>
+          <label className="signup-email-label">
+            {/* Email */}
+            <input className="signup-email-input" placeholder="EMAIL" />
           </label>
           <label>
-            Password
-            <input className="signup-password-input" />
+            {/* Password */}
+            <input className="signup-password-input" placeholder="PASSWORD" />
           </label>
           <button className="signup-form-submit-button">Submit</button>
         </form>
