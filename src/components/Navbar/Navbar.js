@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Navbar.scss";
 import logo from "../../Images/logo.png";
 
-export default class Navbars extends Component {
+export default class Navbar extends Component {
   constructor(props) {
     super(props);
   }
