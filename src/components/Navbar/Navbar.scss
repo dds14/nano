@@ -68,6 +68,7 @@ $nav-background: white;
   margin-right: 50px;
   font-family: "Quicksand", sans-serif;
   font-size: $nav-font-size;
+  text-decoration: none;
 }
 
 .nav-login:hover {
@@ -99,6 +100,7 @@ $nav-background: white;
   margin-bottom: 28px;
   opacity: 1;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .nav-sign-up:hover {

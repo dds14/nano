@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Navbar.scss";
+import { Link } from "react-router-dom";
 import logo from "../../Images/logo.png";
 
 export default class Navbar extends Component {
@@ -16,10 +17,12 @@ export default class Navbar extends Component {
           <p className="nav-influencer">I'm an influencer</p>
         </div>
         <div className="nav-right-side">
-          <button className="nav-login">Login</button>
-          <button className="nav-sign-up">
+          <Link to="/login" className="nav-login">
+            Login
+          </Link>
+          <Link to="/signup" className="nav-sign-up">
             <span className="sign-up-span">Sign up for free</span>
-          </button>
+          </Link>
         </div>
       </div>
     );
