@@ -2,16 +2,14 @@ const bcrypt = require("bcryptjs");
 
 const signup = async (req, res) => {
   const db = req.app.get("db");
-  const { username, email, password, admin } = req.body;
-  const user = await db.login(username);
-  if (user.length > 0) {
-    res.status(403).json("username taken");
-  } else {
-    const hash = await bcrypt.hash(password, 12);
-    await db.signup([username, email, hash, admin]);
-    req.session.user = { username, email, admin };
-    res.status(200).json(req.session.user);
-  }
+  console.log(req.body);
+  const { username, email, password } = req.body;
+  const hash = await bcrypt.hash(password, 10);
+  const result = await db.signup([username, email, hash, admin]).catch(err => {
+    res.status(400).json("Username already exists");
+  });
+  req.session.user = { username: result[0].username };
+  res.json(result);
 };
 
 module.exports = {
