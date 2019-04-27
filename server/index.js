@@ -7,6 +7,7 @@ const { SERVER_PORT, SESSION_SECRET } = process.env;
 const app = express();
 
 app.use(express.json());
+const { signup } = require("./controllers/authController");
 
 massive(process.env.CONNECTION_STRING)
   .then(db => {
@@ -27,6 +28,8 @@ app.use(
     }
   })
 );
+
+app.post("/api/signup", signup);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on ${SERVER_PORT}`);
