@@ -1,0 +1,46 @@
+@import "../../variables.scss";
+
+.signup {
+  width: 100%;
+  height: 100vh;
+  font-family: $font;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBa6g2DpveG3XFs3-lP7Hn0OUoW3ZfWJm_L-9Grs5H3vGf1zzukA");
+  background-repeat: none;
+  background-size: cover;
+}
+
+.signup-background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.signup-header {
+  margin-bottom: 20px;
+}
+
+.signup-form {
+  display: flex;
+  height: 80vh;
+  border: 1px solid green;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-username-input {
+  border: 1px solid blue;
+  margin-bottom: 20px;
+  margin-left: 12px;
+}
+
+.signup-password-input {
+  border: 1px solid blue;
+  margin-bottom: 20px;
+  margin-left: 13px;
+}
+
+.signup-form-submit-button {
+  border: 1px solid blue;
+  width: 5%;
+}
