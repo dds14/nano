@@ -1,2 +1,2 @@
-INSERT INTO nano_users (username, email, password, admin) VALUES ($1, $2, $3, $4)
+INSERT INTO nano_users (username, email, password) VALUES ($1, $2, $3)
 RETURNING * ;

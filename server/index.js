@@ -29,7 +29,7 @@ app.use(
   })
 );
 
-app.post("/api/signup", signup);
+app.post("/auth/signup", signup);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on ${SERVER_PORT}`);

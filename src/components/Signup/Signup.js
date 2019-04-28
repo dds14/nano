@@ -22,7 +22,7 @@ export class Signup extends Component {
   }
 
   handleChange(e) {
-    this.setState({ [e.target.name]: [e.target.value] });
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   handleSubmit(e) {
@@ -37,6 +37,7 @@ export class Signup extends Component {
   }
 
   render() {
+    // console.log(this.state.password);
     if (this.state.button) {
       return <Redirect to="/" />;
     }
