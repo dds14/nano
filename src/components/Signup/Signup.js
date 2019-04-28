@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { signUp } from "../../ducks/auth";
@@ -72,11 +71,7 @@ export class Signup extends Component {
               name="password"
             />
           </label>
-          <button
-          // className="signup-form-submit-button"
-          >
-            Submit
-          </button>
+          <button className="signup-form-submit-button">Submit</button>
         </form>
       </div>
     );
