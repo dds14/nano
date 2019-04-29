@@ -119,6 +119,7 @@ export default class brandSignUp extends Component {
               name="contactInfo"
             />
           </label>
+          <button>Submit</button>
         </form>
       </div>
     );

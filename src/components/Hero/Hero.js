@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Hero.scss";
-import girl1 from "../../Images/girl1.jpg";
 
 export default class Hero extends Component {
   constructor(props) {
