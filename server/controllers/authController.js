@@ -1,5 +1,6 @@
 const bcrypt = require("bcryptjs");
 
+// Main Account Signup
 const signup = async (req, res) => {
   const db = req.app.get("db");
   // console.log(req.body);
@@ -14,6 +15,7 @@ const signup = async (req, res) => {
   res.json(result);
 };
 
+// Main Account Login
 const login = async (req, res) => {
   const db = req.app.get("db");
 
@@ -39,7 +41,45 @@ const login = async (req, res) => {
   }
 };
 
+const influencerSignUp = async (req, res) => {
+  const db = req.app.get("db");
+  // console.log(req.body);
+  const {
+    igAccountName,
+    atName,
+    profilePicture,
+    accountDescription,
+    followerCount,
+    averageLikes,
+    averageComments,
+    engagementRate,
+    audienceBreakdown,
+    pricePerPost,
+    contactInfo
+  } = req.body;
+  const result = await db
+    .influencerSignUp([
+      igAccountName,
+      atName,
+      profilePicture,
+      accountDescription,
+      followerCount,
+      averageLikes,
+      averageComments,
+      engagementRate,
+      audienceBreakdown,
+      pricePerPost,
+      contactInfo
+    ])
+    .catch(err => {
+      res.status(400).json("Username already exists");
+    });
+  req.session.igAccountName = { igAccountName: result[0].igAccountName };
+  res.json(result);
+};
+
 module.exports = {
   signup,
-  login
+  login,
+  influencerSignUp
 };

@@ -8,6 +8,7 @@ const app = express();
 
 app.use(express.json());
 const { signup, login } = require("./controllers/authController");
+const { influencerSignUp } = require("./controllers/authController");
 
 massive(process.env.CONNECTION_STRING)
   .then(db => {
@@ -29,8 +30,13 @@ app.use(
   })
 );
 
+// Login Authentication
 app.post("/auth/signup", signup);
 app.post("/auth/login", login);
+
+// Influencer and Brand Account Creations
+app.post("/auth/influencersignup", influencerSignUp);
+
 // app.post("/auth/me", me);
 
 app.listen(SERVER_PORT, () => {

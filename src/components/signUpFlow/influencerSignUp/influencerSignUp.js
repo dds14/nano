@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import { influencerSignUp } from "../../../ducks/influencerInfo";
 
-export default class brandSignUp extends Component {
+export class influencerCreateInfo extends Component {
   constructor(props) {
     super(props);
 
@@ -25,7 +26,7 @@ export default class brandSignUp extends Component {
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(this.state.audienceBreakdown);
+    // console.log(this.state.audienceBreakdown);
   }
 
   handleSubmit(e) {
@@ -44,6 +45,7 @@ export default class brandSignUp extends Component {
       this.state.pricePerPost,
       this.state.contactInfo
     );
+    console.log("submitted");
   }
 
   render() {
@@ -125,3 +127,10 @@ export default class brandSignUp extends Component {
     );
   }
 }
+
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(
+  mapStateToProps,
+  { influencerSignUp }
+)(influencerCreateInfo);
