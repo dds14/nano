@@ -5,7 +5,6 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import influencerSignUp from "./components/signUpFlow/influencerSignUp/influencerSignUp";
 import brandSignUp from "./components/signUpFlow/brandSignUp/brandSignUp";
-import App from "./App";
 
 export default (
   <Switch>
