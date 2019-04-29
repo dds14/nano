@@ -2,12 +2,14 @@ const bcrypt = require("bcryptjs");
 
 const signup = async (req, res) => {
   const db = req.app.get("db");
-  console.log(req.body);
-  const { username, email, password } = req.body;
+  // console.log(req.body);
+  const { username, email, password, influencer } = req.body;
   const hash = await bcrypt.hash(password, 10);
-  const result = await db.signup([username, email, hash]).catch(err => {
-    res.status(400).json("Username already exists");
-  });
+  const result = await db
+    .signup([username, email, hash, influencer])
+    .catch(err => {
+      res.status(400).json("Username already exists");
+    });
   req.session.user = { username: result[0].username };
   res.json(result);
 };
@@ -23,8 +25,7 @@ const login = async (req, res) => {
     );
     if (isMatch) {
       req.session.user = {
-        username: results[0].username,
-        balance: results[0].balance
+        username: results[0].username
       };
       console.log(results);
       res.json({ username: results[0].username });

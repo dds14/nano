@@ -4,7 +4,7 @@ const initialState = {
   username: "",
   email: "",
   password: "",
-  admin: false
+  influencer: false
 };
 
 // Action Types
@@ -13,10 +13,15 @@ const LOGIN = "LOGIN";
 const ME = "ME";
 
 // Action Creator
-export function signUp(username, email, password) {
+export function signUp(username, email, password, influencer) {
   return {
     type: SIGN_UP,
-    payload: axios.post("/auth/signup", { username, email, password })
+    payload: axios.post("/auth/signup", {
+      username,
+      email,
+      password,
+      influencer
+    })
   };
 }
 
@@ -41,7 +46,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         username: action.payload.data.username,
         email: action.payload.data.email,
-        password: action.payload.data.password
+        password: action.payload.data.password,
+        influencer: action.payload.data.influencer
       };
     case `${LOGIN}_FULFILLED`:
       return {

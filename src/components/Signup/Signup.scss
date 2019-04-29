@@ -19,7 +19,7 @@
   margin-bottom: 20px;
   font-size: 32px;
   background: -webkit-linear-gradient(left, #37fdfc, #f0b5eb);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -89,7 +89,7 @@ placeholder {
 .signup-form-submit-button {
   //   border: 1px solid blue;
   background: -webkit-linear-gradient(left, #37fdfc, #f0b5eb);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-left: 35px;
   padding-right: 15px;
@@ -111,7 +111,20 @@ label {
   width: 125px;
   text-align: right;
 }
+
 input {
   display: inline-block;
   //   float: right;
+}
+
+.signup-checkboxes {
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-around;
+  // border: 3px solid red;
+  // width: 25vw;
+}
+
+.signup-brand-input-label {
+  padding-right: 10px;
 }

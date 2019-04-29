@@ -13,6 +13,7 @@ export class Signup extends Component {
       username: "",
       email: "",
       password: "",
+      influencer: false,
       button: false,
       redirect: false
     };
@@ -22,6 +23,7 @@ export class Signup extends Component {
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+    console.log(this.state.influencer);
   }
 
   handleSubmit(e) {
@@ -30,13 +32,14 @@ export class Signup extends Component {
     this.props.signUp(
       this.state.username,
       this.state.email,
-      this.state.password
+      this.state.password,
+      this.state.influencer
     );
     this.setState({ button: true });
   }
 
   render() {
-    // console.log(this.state.password);
+    // add functionality
     if (this.state.button) {
       return <Redirect to="/" />;
     }
@@ -71,6 +74,37 @@ export class Signup extends Component {
               name="password"
             />
           </label>
+          {/* Brand Checkbox */}
+          <div className="signup-checkboxes">
+            <div>
+              <input
+                type="radio"
+                className="signup-brand-input-label"
+                name="brand"
+                value="brand"
+                onChange={e => this.setState({ influencer: false })}
+                checked={this.state.influencer === false}
+              />
+              <label for="brand" className="signup-brand-input-label">
+                I'm a brand
+              </label>
+            </div>
+            {/* Influencer Checkbox */}
+
+            <div>
+              <input
+                type="radio"
+                className="signup-influencer-input-checkbox"
+                name="influencer"
+                value="influencer"
+                onChange={e => this.setState({ influencer: true })}
+                checked={this.state.influencer === true}
+              />
+              <label for="influencer" className="signup-influencer-input-label">
+                I'm an influencer
+              </label>
+            </div>
+          </div>
           <button className="signup-form-submit-button">Submit</button>
         </form>
       </div>
