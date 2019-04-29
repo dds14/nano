@@ -8,7 +8,7 @@ export default class brandSignUp extends Component {
   render() {
     return (
       <div>
-        <h1>BRAND DASHBOARD</h1>
+        <h1>BRAND SIGN UP</h1>
       </div>
     );
   }
