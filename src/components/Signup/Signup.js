@@ -41,9 +41,9 @@ export class Signup extends Component {
   render() {
     if (this.state.button) {
       if (this.state.influencer === true) {
-        return <Redirect to="/influencer-dashboard" />;
+        return <Redirect to="/influencer-signup" />;
       } else {
-        return <Redirect to="/brand-dashboard" />;
+        return <Redirect to="/brand-signup" />;
       }
     }
 

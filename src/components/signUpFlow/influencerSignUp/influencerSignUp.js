@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class influencerDashboard extends Component {
+export default class influencerSignUp extends Component {
   constructor(props) {
     super(props);
   }
@@ -8,7 +8,7 @@ export default class influencerDashboard extends Component {
   render() {
     return (
       <div>
-        <h1>INFLUENCER DASHBOARD</h1>
+        <h1>INFLUENCER</h1>
       </div>
     );
   }
