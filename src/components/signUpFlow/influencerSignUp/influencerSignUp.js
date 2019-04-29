@@ -7,40 +7,49 @@ export default class brandSignUp extends Component {
     super(props);
 
     this.state = {
-      companyName: "",
-      website: "",
-      description: "",
-      targetDemographic: "",
-      missionStatement: "",
-      budget: "",
-      contactInfo: "",
-      logo: ""
+      igAccountName: "",
+      atName: "",
+      profilePicture: "",
+      accountDescription: "",
+      followerCount: "",
+      averageLikes: "",
+      averageComments: "",
+      engagementRate: "",
+      audienceBreakdown: "",
+      pricePerPost: "",
+      contactInfo: ""
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+    console.log(this.state.audienceBreakdown);
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
     this.props.influencerSignUp(
-      this.state.companyName,
-      this.state.website,
-      this.state.description,
-      this.state.targetDemographic,
-      this.state.missionStatement,
-      this.state.budget,
-      this.state.contactInfo,
-      this.state.logo
+      this.state.igAccountName,
+      this.state.atName,
+      this.state.profilePicture,
+      this.state.accountDescription,
+      this.state.followerCount,
+      this.state.averageLikes,
+      this.state.averageComments,
+      this.state.engagementRate,
+      this.state.audienceBreakdown,
+      this.state.pricePerPost,
+      this.state.contactInfo
     );
   }
 
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <h1>INFLUENCER SIGN UP</h1>
           <label>
             <input
