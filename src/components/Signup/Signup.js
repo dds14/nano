@@ -39,10 +39,14 @@ export class Signup extends Component {
   }
 
   render() {
-    // add functionality
     if (this.state.button) {
-      return <Redirect to="/" />;
+      if (this.state.influencer === true) {
+        return <Redirect to="/influencer-dashboard" />;
+      } else {
+        return <Redirect to="/brand-dashboard" />;
+      }
     }
+
     return (
       <div className="signup">
         <form className="signup-form" onSubmit={this.handleSubmit}>
