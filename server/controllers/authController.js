@@ -12,6 +12,33 @@ const signup = async (req, res) => {
   res.json(result);
 };
 
+const login = async (req, res) => {
+  const db = req.app.get("db");
+
+  const results = await db.login(req.body.username);
+  if (results[0]) {
+    const isMatch = await bcrypt.compare(
+      req.body.password,
+      results[0].password
+    );
+    if (isMatch) {
+      req.session.user = {
+        username: results[0].username,
+        balance: results[0].balance
+      };
+      console.log(results);
+      res.json({ username: results[0].username });
+    } else {
+      res.status(403).json("Error: Wrong password");
+      // console.log("wrong pw");
+    }
+  } else {
+    res.status(403).json("Error: Wrong username.");
+    // console.log("wrong un");
+  }
+};
+
 module.exports = {
-  signup
+  signup,
+  login
 };
