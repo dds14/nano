@@ -1,5 +1,5 @@
 import axios from "axios";
-
+// these need to match front end (influencerDashboard.js)
 const initialState = {
   igAccountName: "",
   atName: "",
@@ -50,21 +50,23 @@ export function influencerSignUp(
 }
 
 export default function reducer(state = initialState, action) {
+  console.log(action);
   switch (action.type) {
     case `${INFLUENCER_SIGN_UP}_FULFILLED`:
+      console.log(action.payload.data[0].igaccountname);
       return {
         ...state,
-        igAccountName: action.payload.data.igAccountName,
-        atName: action.payload.data.atName,
-        profilePicture: action.payload.data.profilePicture,
-        accountDescription: action.payload.data.accountDescription,
-        followerCount: action.payload.data.followerCount,
-        averageLikes: action.payload.data.averageLikes,
-        averageComments: action.payload.data.averageComments,
-        engagementRate: action.payload.data.engagementRate,
-        audienceBreakdown: action.payload.data.audienceBreakdown,
-        pricePerPost: action.payload.data.pricePerPost,
-        contactInfo: action.payload.data.contactInfo
+        igAccountName: action.payload.data[0].igaccountname,
+        atName: action.payload.data[0].atname,
+        profilePicture: action.payload.data[0].profilepicture,
+        accountDescription: action.payload.data[0].accountdescription,
+        followerCount: action.payload.data[0].followercount,
+        averageLikes: action.payload.data[0].averagelikes,
+        averageComments: action.payload.data[0].averagecomments,
+        engagementRate: action.payload.data[0].engagementrate,
+        audienceBreakdown: action.payload.data[0].audiencebreakdown,
+        pricePerPost: action.payload.data[0].priceperpost,
+        contactInfo: action.payload.data[0].contactinfo
       };
     default:
       return state;

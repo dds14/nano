@@ -5,7 +5,7 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import influencerSignUp from "./components/signUpFlow/influencerSignUp/influencerSignUp";
 import brandSignUp from "./components/signUpFlow/brandSignUp/brandSignUp";
-import { influencerDashboard } from "./components/Dashboards/influencerDashboard/influencerDashboard";
+import influencerDashboard from "./components/Dashboards/influencerDashboard/influencerDashboard";
 
 export default (
   <Switch>
