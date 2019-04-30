@@ -3,8 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import Signup from "./components/Signup/Signup";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
-import influencerSignUp from "./components/signUpFlow/influencerSignUp/influencerSignUp";
-import brandSignUp from "./components/signUpFlow/brandSignUp/brandSignUp";
+import influencerSignUp from "./components/___unused: signUpFlow/influencerSignUp/influencerSignUp";
+import brandSignUp from "./components/___unused: signUpFlow/brandSignUp/brandSignUp";
 import influencerDashboard from "./components/Dashboards/influencerDashboard/influencerDashboard";
 
 export default (
