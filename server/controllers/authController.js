@@ -78,8 +78,14 @@ const influencerSignUp = async (req, res) => {
   res.json(result);
 };
 
+const getInfluencerInfo = (req, res) => {
+  const db = req.app.get("db");
+  db.getInfluencerInfo().then(info => res.status(200).json(info));
+};
+
 module.exports = {
   signup,
   login,
-  influencerSignUp
+  influencerSignUp,
+  getInfluencerInfo
 };
