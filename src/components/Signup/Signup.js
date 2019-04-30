@@ -13,7 +13,17 @@ export class Signup extends Component {
       username: "",
       email: "",
       password: "",
-      influencer: false,
+      igaccountname: "",
+      atname: "",
+      profilepicture: "",
+      accountdescription: "",
+      followercount: "",
+      averagelikes: "",
+      averagecomments: "",
+      engagementrate: "",
+      audiencebreakdown: "",
+      priceperpost: "",
+      contactinfo: "",
       button: false,
       redirect: false
     };
@@ -32,18 +42,24 @@ export class Signup extends Component {
       this.state.username,
       this.state.email,
       this.state.password,
-      this.state.influencer
+      this.state.igaccountname,
+      this.state.atname,
+      this.state.profilepicture,
+      this.state.accountdescription,
+      this.state.followercount,
+      this.state.averagelikes,
+      this.state.averagecomments,
+      this.state.engagementrate,
+      this.state.audiencebreakdown,
+      this.state.priceperpost,
+      this.state.contactinfo
     );
     this.setState({ button: true });
   }
 
   render() {
     if (this.state.button) {
-      if (this.state.influencer === true) {
-        return <Redirect to="/influencer-signup" />;
-      } else {
-        return <Redirect to="/brand-signup" />;
-      }
+      return <Redirect to="/influencer-signup" />;
     }
 
     return (
@@ -77,37 +93,76 @@ export class Signup extends Component {
               name="password"
             />
           </label>
-          {/* Brand Checkbox */}
-          <div className="signup-checkboxes">
-            <div>
-              <input
-                type="radio"
-                className="signup-brand-input-label"
-                name="brand"
-                value="brand"
-                onChange={e => this.setState({ influencer: false })}
-                checked={this.state.influencer === false}
-              />
-              <label for="brand" className="signup-brand-input-label">
-                I'm a brand
-              </label>
-            </div>
-            {/* Influencer Checkbox */}
+          <h1>INFLUENCER SIGN UP</h1>
+          <label>
+            <input
+              placeholder="IG Account Name"
+              onChange={this.handleChange}
+              value={this.state.igaccountname}
+              name="igaccountname"
+            />
+            <input
+              placeholder="IG @Username"
+              onChange={this.handleChange}
+              value={this.state.atname}
+              name="atname"
+            />
+            <input
+              placeholder="Profile Picture (link)"
+              onChange={this.handleChange}
+              value={this.state.profilepicture}
+              name="profilepicture"
+            />
+            <input
+              placeholder="Describe Your Account"
+              onChange={this.handleChange}
+              value={this.state.accountdescription}
+              name="accountdescription"
+            />
+            <input
+              placeholder="Follower Count"
+              onChange={this.handleChange}
+              value={this.state.followercount}
+              name="followercount"
+            />
+            <input
+              placeholder="Average Likes Per Post"
+              onChange={this.handleChange}
+              value={this.state.averagelikes}
+              name="averagelikes"
+            />
+            <input
+              placeholder="Average Comments Per Post"
+              onChange={this.handleChange}
+              value={this.state.averagecomments}
+              name="averagecomments"
+            />
+            <input
+              placeholder="Engagement Rate %"
+              onChange={this.handleChange}
+              value={this.state.engagementrate}
+              name="engagementrate"
+            />
+            <input
+              placeholder="Audience Breakdown"
+              onChange={this.handleChange}
+              value={this.state.audiencebreakdown}
+              name="audiencebreakdown"
+            />
+            <input
+              placeholder="Price Per Post"
+              onChange={this.handleChange}
+              value={this.state.priceperpost}
+              name="priceperpost"
+            />
+            <input
+              placeholder="Contact Information"
+              onChange={this.handleChange}
+              value={this.state.contactinfo}
+              name="contactinfo"
+            />
+          </label>
 
-            <div>
-              <input
-                type="radio"
-                className="signup-influencer-input-checkbox"
-                name="influencer"
-                value="influencer"
-                onChange={e => this.setState({ influencer: true })}
-                checked={this.state.influencer === true}
-              />
-              <label for="influencer" className="signup-influencer-input-label">
-                I'm an influencer
-              </label>
-            </div>
-          </div>
           <button className="signup-form-submit-button">Submit</button>
         </form>
       </div>

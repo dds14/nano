@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { influencerSignUp } from "../../../ducks/influencerInfo";
+import { influencerSignUp } from "../../../ducks/___unused: influencerInfo";
 import axios from "axios";
 
 export class influencerDashboard extends Component {
@@ -19,7 +19,6 @@ export class influencerDashboard extends Component {
 
   render() {
     console.log(this.props.reduxState);
-
     return (
       <div>
         <h1>{this.props.reduxState.igAccountName}</h1>

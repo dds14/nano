@@ -3,15 +3,46 @@ const bcrypt = require("bcryptjs");
 // Main Account Signup
 const signup = async (req, res) => {
   const db = req.app.get("db");
-  // console.log(req.body);
-  const { username, email, password, influencer } = req.body;
+  console.log(req.body);
+  const {
+    username,
+    email,
+    password,
+    igaccountname,
+    atname,
+    profilepicture,
+    accountdescription,
+    followercount,
+    averagelikes,
+    averagecomments,
+    engagementrate,
+    audiencebreakdown,
+    priceperpost,
+    contactinfo
+  } = req.body;
   const hash = await bcrypt.hash(password, 10);
   const result = await db
-    .signup([username, email, hash, influencer])
+    .signup([
+      username,
+      email,
+      hash,
+      igaccountname,
+      atname,
+      profilepicture,
+      accountdescription,
+      followercount,
+      averagelikes,
+      averagecomments,
+      engagementrate,
+      audiencebreakdown,
+      priceperpost,
+      contactinfo
+    ])
     .catch(err => {
       res.status(400).json("Username already exists");
     });
   req.session.user = { username: result[0].username };
+  console.log(req.session.user);
   res.json(result);
 };
 
@@ -41,51 +72,51 @@ const login = async (req, res) => {
   }
 };
 
-const influencerSignUp = async (req, res) => {
-  const db = req.app.get("db");
-  // console.log(req.body);
-  const {
-    igAccountName,
-    atName,
-    profilePicture,
-    accountDescription,
-    followerCount,
-    averageLikes,
-    averageComments,
-    engagementRate,
-    audienceBreakdown,
-    pricePerPost,
-    contactInfo
-  } = req.body;
-  const result = await db
-    .influencerSignUp([
-      igAccountName,
-      atName,
-      profilePicture,
-      accountDescription,
-      followerCount,
-      averageLikes,
-      averageComments,
-      engagementRate,
-      audienceBreakdown,
-      pricePerPost,
-      contactInfo
-    ])
-    .catch(err => {
-      res.status(400).json("Username already exists");
-    });
-  req.session.igAccountName = { igAccountName: result[0].igAccountName };
-  res.json(result);
-};
+// const influencerSignUp = async (req, res) => {
+//   const db = req.app.get("db");
+//   // console.log(req.body);
+//   const {
+//     igaccountname,
+//     atname,
+//     profilepicture,
+//     accountdescription,
+//     followercount,
+//     averagelikes,
+//     averagecomments,
+//     engagementrate,
+//     audiencebreakdown,
+//     priceperpost,
+//     contactinfo
+//   } = req.body;
+//   console.log(req.session.user.id);
+//   const result = await db
+//     .influencerSignUp([
+//       igAccountName,
+//       atName,
+//       profilePicture,
+//       accountDescription,
+//       followerCount,
+//       averageLikes,
+//       averageComments,
+//       engagementRate,
+//       audienceBreakdown,
+//       pricePerPost,
+//       contactInfo,
+//       req.session.user.id
+//     ])
+//     .catch(err => {
+//       res.status(400).json("Username already exists");
+//     });
+//   req.session.igAccountName = { igAccountName: result[0].igAccountName };
+//   res.json(result);
+// };
 
-const getInfluencerInfo = (req, res) => {
-  const db = req.app.get("db");
-  db.getInfluencerInfo().then(info => res.status(200).json(info));
-};
+// const getInfluencerInfo = (req, res) => {
+//   const db = req.app.get("db");
+//   db.getInfluencerInfo().then(info => res.status(200).json(info));
+// };
 
 module.exports = {
   signup,
-  login,
-  influencerSignUp,
-  getInfluencerInfo
+  login
 };
