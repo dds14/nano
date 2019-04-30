@@ -37,6 +37,8 @@ app.post("/auth/login", login);
 // Influencer and Brand Account Creations
 app.post("/auth/influencersignup", influencerSignUp);
 
+// Influencer and Brand - Displayin the information on the dashboard
+
 // app.post("/auth/me", me);
 
 app.listen(SERVER_PORT, () => {

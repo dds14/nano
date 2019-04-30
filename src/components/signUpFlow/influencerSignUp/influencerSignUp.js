@@ -18,7 +18,8 @@ export class influencerCreateInfo extends Component {
       engagementRate: "",
       audienceBreakdown: "",
       pricePerPost: "",
-      contactInfo: ""
+      contactInfo: "",
+      button: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,10 +46,14 @@ export class influencerCreateInfo extends Component {
       this.state.pricePerPost,
       this.state.contactInfo
     );
-    console.log("submitted");
+    this.setState({ button: true });
   }
 
   render() {
+    if (this.state.button) {
+      return <Redirect to="/influencer-dashboard" />;
+    }
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
