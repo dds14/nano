@@ -64,9 +64,14 @@ export class Signup extends Component {
 
     return (
       <div className="signup">
-        <form className="signup-form" onSubmit={this.handleSubmit}>
+        <form
+          autocomplete="off"
+          className="signup-form"
+          onSubmit={this.handleSubmit}
+        >
           <h1 className="signup-header">SIGN UP</h1>
           <label>
+            <h4 className="signup-nano-header">Nano Info</h4>
             <input
               className="signup-username-input"
               placeholder="Username"
@@ -93,12 +98,12 @@ export class Signup extends Component {
               name="password"
             />
             <h4 className="signup-instagram-header">Instagram Info</h4>
-            <input
+            {/* <input
               placeholder="IG Account Name"
               onChange={this.handleChange}
               value={this.state.igaccountname}
               name="igaccountname"
-            />
+            /> */}
             <input
               placeholder="IG @Username"
               onChange={this.handleChange}
@@ -111,12 +116,12 @@ export class Signup extends Component {
               value={this.state.profilepicture}
               name="profilepicture"
             />
-            <input
+            {/* <input
               placeholder="Describe Your Account"
               onChange={this.handleChange}
               value={this.state.accountdescription}
               name="accountdescription"
-            />
+            /> */}
             <input
               placeholder="Follower Count"
               onChange={this.handleChange}
@@ -129,12 +134,12 @@ export class Signup extends Component {
               value={this.state.averagelikes}
               name="averagelikes"
             />
-            <input
+            {/* <input
               placeholder="Average Comments"
               onChange={this.handleChange}
               value={this.state.averagecomments}
               name="averagecomments"
-            />
+            /> */}
             <input
               placeholder="Engagement Rate %"
               onChange={this.handleChange}
