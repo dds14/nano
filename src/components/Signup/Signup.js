@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { signUp } from "../../ducks/auth";
+import logo from "../../Images/logo.png";
 
 import "./Signup.scss";
 
@@ -69,6 +70,8 @@ export class Signup extends Component {
           className="signup-form"
           onSubmit={this.handleSubmit}
         >
+          <img src={logo} className="signup-logo" alt="logo" />
+
           <h1 className="signup-header">SIGN UP</h1>
           <label>
             <h4 className="signup-nano-header">Nano Info</h4>
@@ -97,13 +100,13 @@ export class Signup extends Component {
               value={this.state.password}
               name="password"
             />
-            <h4 className="signup-instagram-header">Instagram Info</h4>
-            {/* <input
+            {/* <h4 className="signup-instagram-header">Instagram Info</h4>
+            <input
               placeholder="IG Account Name"
               onChange={this.handleChange}
               value={this.state.igaccountname}
               name="igaccountname"
-            /> */}
+            />
             <input
               placeholder="IG @Username"
               onChange={this.handleChange}
@@ -116,12 +119,12 @@ export class Signup extends Component {
               value={this.state.profilepicture}
               name="profilepicture"
             />
-            {/* <input
+            <input
               placeholder="Describe Your Account"
               onChange={this.handleChange}
               value={this.state.accountdescription}
               name="accountdescription"
-            /> */}
+            />
             <input
               placeholder="Follower Count"
               onChange={this.handleChange}
@@ -134,12 +137,12 @@ export class Signup extends Component {
               value={this.state.averagelikes}
               name="averagelikes"
             />
-            {/* <input
+            <input
               placeholder="Average Comments"
               onChange={this.handleChange}
               value={this.state.averagecomments}
               name="averagecomments"
-            /> */}
+            />
             <input
               placeholder="Engagement Rate %"
               onChange={this.handleChange}
@@ -163,7 +166,7 @@ export class Signup extends Component {
               onChange={this.handleChange}
               value={this.state.contactinfo}
               name="contactinfo"
-            />
+            /> */}
           </label>
 
           <button className="signup-form-submit-button">Submit</button>
