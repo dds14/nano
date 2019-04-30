@@ -1,6 +1,7 @@
 @import "../../variables.scss";
 
 .signup {
+  // border: 1px solid red;
   width: 100%;
   height: 100vh;
   font-family: $font;
@@ -23,18 +24,23 @@
   -webkit-text-fill-color: transparent;
 }
 
-placeholder {
-  padding-bottom: 10px;
+input {
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 15px;
 }
 
 .signup-form {
+  // border: 1px solid red;
   display: flex;
   background-color: white;
   height: 80vh;
-  //   border: 1px solid green;
-  width: 30vw;
-  height: 70vh;
-  border-radius: 25px;
+  width: 40%;
+  height: 90%;
   text-align: center;
   flex-direction: column;
   align-items: center;
@@ -46,14 +52,25 @@ placeholder {
   transform: translate(-50%, -50%);
 }
 
-.signup-username-input {
-  border-bottom: 1px solid grey;
-  //   border-bottom-color: $accent;
-  margin-bottom: 20px;
-  margin-top: 25px;
-  width: 12vw;
+@media only screen and (max-width: 800px) {
+  .signup-form {
+    height: 95%;
+    width: 70%;
+  }
+}
 
-  //   margin-left: 12px;
+.signup-instagram-header {
+  display: flex;
+  justify-content: center;
+  border: 1px solid red;
+  width: 110%;
+  padding-top: 7px;
+  padding-bottom: 5px;
+}
+
+.signup-username-input {
+  // margin-bottom: 20px;
+  margin-top: 15px;
 }
 
 .signup-username-input:focus {
@@ -61,13 +78,7 @@ placeholder {
 }
 
 .signup-email-input {
-  //   border: 1px solid blue;
-  margin-bottom: 20px;
-  width: 12vw;
-  border-bottom: 1px solid grey;
-
-  //   border-bottom-color: $accent;
-  //   margin-left: 28px;
+  // margin-bottom: 20px;
 }
 
 .signup-email-input:focus {
@@ -76,10 +87,7 @@ placeholder {
 
 .signup-password-input {
   //   border: 1px solid blue;
-  margin-bottom: 20px;
-  width: 12vw;
-  border-bottom: 1px solid grey;
-  margin-bottom: 50px;
+  // margin-bottom: 20px;
 }
 
 .signup-password-input:focus {

@@ -59,7 +59,7 @@ export class Signup extends Component {
 
   render() {
     if (this.state.button) {
-      return <Redirect to="/influencer-signup" />;
+      return <Redirect to="/" />;
     }
 
     return (
@@ -69,7 +69,7 @@ export class Signup extends Component {
           <label>
             <input
               className="signup-username-input"
-              placeholder="USERNAME"
+              placeholder="Username"
               onChange={this.handleChange}
               value={this.state.username}
               name="username"
@@ -78,7 +78,7 @@ export class Signup extends Component {
           <label className="signup-email-label">
             <input
               className="signup-email-input"
-              placeholder="EMAIL"
+              placeholder="Email"
               onChange={this.handleChange}
               value={this.state.email}
               name="email"
@@ -87,14 +87,12 @@ export class Signup extends Component {
           <label>
             <input
               className="signup-password-input"
-              placeholder="PASSWORD"
+              placeholder="Password"
               onChange={this.handleChange}
               value={this.state.password}
               name="password"
             />
-          </label>
-          <h1>INFLUENCER SIGN UP</h1>
-          <label>
+            <h4 className="signup-instagram-header">Instagram Info</h4>
             <input
               placeholder="IG Account Name"
               onChange={this.handleChange}
@@ -132,7 +130,7 @@ export class Signup extends Component {
               name="averagelikes"
             />
             <input
-              placeholder="Average Comments Per Post"
+              placeholder="Average Comments"
               onChange={this.handleChange}
               value={this.state.averagecomments}
               name="averagecomments"
@@ -144,7 +142,7 @@ export class Signup extends Component {
               name="engagementrate"
             />
             <input
-              placeholder="Audience Breakdown"
+              placeholder="Target Audience"
               onChange={this.handleChange}
               value={this.state.audiencebreakdown}
               name="audiencebreakdown"
