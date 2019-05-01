@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../../ducks/auth";
+import logo from "../../Images/logo.png";
+import "./Login.scss";
 
 class Login extends Component {
   constructor(props) {
@@ -30,12 +32,19 @@ class Login extends Component {
       return <Redirect to="/account" push={true} />;
     }
     return (
-      <div>
-        <h1>Login</h1>
-        <form onSubmit={this.handleSubmit}>
+      <div className="login">
+        <form
+          autoComplete="off"
+          className="login-form"
+          onSubmit={this.handleSubmit}
+        >
+          <img src={logo} className="login-logo" alt="logo" />
+
+          <h1 className="login-header">Login</h1>
           <label>
             Username
             <input
+              className="login-username-input"
               onChange={this.handleChange}
               value={this.state.username}
               name="username"
@@ -44,13 +53,14 @@ class Login extends Component {
           <label>
             Password
             <input
+              className="login-password-input"
               onChange={this.handleChange}
               value={this.state.password}
               name="password"
               type="password"
             />
           </label>
-          <button>Submit</button>
+          <button className="login-form-submit-button">Submit</button>
         </form>
       </div>
     );
