@@ -99,6 +99,7 @@ export class Signup extends Component {
               onChange={this.handleChange}
               value={this.state.password}
               name="password"
+              type="password"
             />
             {/* <h4 className="signup-instagram-header">Instagram Info</h4>
             <input

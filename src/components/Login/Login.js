@@ -42,8 +42,9 @@ class Login extends Component {
 
           <h1 className="login-header">Login</h1>
           <label>
-            Username
+            {/* Username */}
             <input
+              placeholder="Username"
               className="login-username-input"
               onChange={this.handleChange}
               value={this.state.username}
@@ -51,8 +52,9 @@ class Login extends Component {
             />
           </label>
           <label>
-            Password
+            {/* Password */}
             <input
+              placeholder="Password"
               className="login-password-input"
               onChange={this.handleChange}
               value={this.state.password}
