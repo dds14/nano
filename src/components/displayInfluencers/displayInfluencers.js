@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class displayInfluencers extends Component {
+export default class DisplayInfluencers extends Component {
   constructor(props) {
     super(props);
   }
