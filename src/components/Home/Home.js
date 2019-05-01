@@ -9,7 +9,6 @@ function App() {
       <header className="App-header" />
       <Navbar />
       <Hero />
-      {/* <Signup /> */}
     </div>
   );
 }
