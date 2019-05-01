@@ -72,7 +72,7 @@ export class Signup extends Component {
         >
           <img src={logo} className="signup-logo" alt="logo" />
 
-          <h1 className="signup-header">SIGN UP</h1>
+          <h1 className="signup-header">— Sign Up —</h1>
           <label>
             <h4 className="signup-nano-header">Nano Info</h4>
             <input

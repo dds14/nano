@@ -40,7 +40,7 @@ class Login extends Component {
         >
           <img src={logo} className="login-logo" alt="logo" />
 
-          <h1 className="login-header">Login</h1>
+          <h1 className="login-header">— Login —</h1>
           <label>
             {/* Username */}
             <input
