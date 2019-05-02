@@ -10,7 +10,8 @@ app.use(express.json());
 const {
   signup,
   login,
-  getinfluencerprofiles
+  getinfluencerprofiles,
+  getSession
 } = require("./controllers/authController");
 
 massive(process.env.CONNECTION_STRING)
@@ -39,6 +40,9 @@ app.post("/auth/login", login);
 
 // Influencer  - Displaying the information on the dashboard
 app.get("/auth/influencerprofiles", getinfluencerprofiles);
+
+// Holds session
+app.get("auth/cookie", getSession);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on ${SERVER_PORT}`);

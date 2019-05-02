@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./displayInfluencers.scss";
 
 export default class DisplayInfluencers extends Component {
   constructor(props) {
@@ -10,11 +11,11 @@ export default class DisplayInfluencers extends Component {
     };
   }
 
-  componentDidMount() {
-    axios.get("auth/influencerprofiles").then(res => {
+  componentDidMount(e) {
+    axios.get("/auth/influencerprofiles").then(res => {
       this.setState({ influencerProfiles: res.data });
-      //   console.log("hey");
-      console.log(this.state.influencerProfiles);
+
+      //   console.log(this.state.influencerProfiles);
     });
   }
 
@@ -22,7 +23,16 @@ export default class DisplayInfluencers extends Component {
     return (
       <div>
         {this.state.influencerProfiles.map((val, index) => {
-          return <div>{val.email}</div>;
+          return (
+            <div className="overall-account-display">
+              <div className="home-account-name">{val.igaccountname}</div>
+              <img
+                src={val.profilepicture}
+                alt="influencer-profile-picture"
+                className="home-profile-picture"
+              />
+            </div>
+          );
         })}
       </div>
     );

@@ -29,7 +29,7 @@ class Login extends Component {
 
   render() {
     if (this.props.auth.username) {
-      return <Redirect to="/account" push={true} />;
+      return <Redirect to="/" push={true} />;
     }
     return (
       <div className="login">

@@ -21,6 +21,7 @@ const initialState = {
 const SIGN_UP = "SIGN_UP";
 const LOGIN = "LOGIN";
 const ME = "ME";
+const GET_SESSION = "GET_SESSION";
 
 // Action Creator
 export function signUp(
@@ -67,6 +68,13 @@ export function login(username, password) {
   };
 }
 
+export function getSession() {
+  return {
+    type: GET_SESSION,
+    payload: axios.get("/auth/cookie")
+  };
+}
+
 export function me() {
   return {
     type: ME,
@@ -106,6 +114,11 @@ export default function reducer(state = initialState, action) {
         ...state,
         username: action.payload.data.username,
         password: action.payload.data.password
+      };
+    case `{GET_SESSION}_FULFILLED`:
+      return {
+        ...state,
+        username: action.payload.data.username
       };
     default:
       return state;

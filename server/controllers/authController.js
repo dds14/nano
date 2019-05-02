@@ -80,8 +80,17 @@ const getinfluencerprofiles = (req, res) => {
   );
 };
 
+const getSession = function(req, res, next) {
+  const { session } = req;
+  if (!session.user) {
+    session.user = { username: "" };
+  }
+  res.json(session.user);
+};
+
 module.exports = {
   signup,
   login,
-  getinfluencerprofiles
+  getinfluencerprofiles,
+  getSession
 };
