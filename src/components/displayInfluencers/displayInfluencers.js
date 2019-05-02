@@ -21,7 +21,7 @@ export default class DisplayInfluencers extends Component {
 
   render() {
     return (
-      <div>
+      <div className="whole-div">
         {this.state.influencerProfiles.map((val, index) => {
           return (
             <div className="overall-account-display">

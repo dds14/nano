@@ -1,3 +1,3 @@
 SELECT * 
-FROM nano_users
+FROM nano_influencers
 WHERE username = $1

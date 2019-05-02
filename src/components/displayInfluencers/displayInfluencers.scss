@@ -1,6 +1,18 @@
 @import "../../variables.scss";
 
+.whole-div {
+  border: 1px solid green;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  justify-content: space-around;
+  padding-top: 45px;
+}
+
 .overall-account-display {
   //   display: flex;
   border: 1px solid red;
+  padding: 10px;
+  padding-bottom: 120px;
 }
