@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 // Main Account Signup
 const signup = async (req, res) => {
   const db = req.app.get("db");
-  console.log(req.body);
+  // console.log(req.body);
   const {
     username,
     email,
@@ -42,7 +42,7 @@ const signup = async (req, res) => {
       res.status(400).json("Username already exists");
     });
   req.session.user = { username: result[0].username };
-  console.log(req.session.user);
+  // console.log(req.session.user);
   res.json(result);
 };
 
@@ -60,7 +60,7 @@ const login = async (req, res) => {
       req.session.user = {
         username: results[0].username
       };
-      console.log(results);
+      // console.log(results);
       res.json({ username: results[0].username });
     } else {
       res.status(403).json("Error: Wrong password");
@@ -72,51 +72,16 @@ const login = async (req, res) => {
   }
 };
 
-// const influencerSignUp = async (req, res) => {
-//   const db = req.app.get("db");
-//   // console.log(req.body);
-//   const {
-//     igaccountname,
-//     atname,
-//     profilepicture,
-//     accountdescription,
-//     followercount,
-//     averagelikes,
-//     averagecomments,
-//     engagementrate,
-//     audiencebreakdown,
-//     priceperpost,
-//     contactinfo
-//   } = req.body;
-//   console.log(req.session.user.id);
-//   const result = await db
-//     .influencerSignUp([
-//       igAccountName,
-//       atName,
-//       profilePicture,
-//       accountDescription,
-//       followerCount,
-//       averageLikes,
-//       averageComments,
-//       engagementRate,
-//       audienceBreakdown,
-//       pricePerPost,
-//       contactInfo,
-//       req.session.user.id
-//     ])
-//     .catch(err => {
-//       res.status(400).json("Username already exists");
-//     });
-//   req.session.igAccountName = { igAccountName: result[0].igAccountName };
-//   res.json(result);
-// };
-
-// const getInfluencerInfo = (req, res) => {
-//   const db = req.app.get("db");
-//   db.getInfluencerInfo().then(info => res.status(200).json(info));
-// };
+// Gets the influencer profiles to be displayed on the home page
+const getinfluencerprofiles = (req, res) => {
+  const db = req.app.get("db");
+  db.getInfluencerProfiles().then(nano_influencers =>
+    res.status(200).json(nano_influencers)
+  );
+};
 
 module.exports = {
   signup,
-  login
+  login,
+  getinfluencerprofiles
 };

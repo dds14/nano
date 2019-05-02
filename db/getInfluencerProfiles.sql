@@ -1,0 +1,1 @@
+SELECT * FROM nano_influencers ORDER BY id DESC;

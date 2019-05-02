@@ -73,102 +73,105 @@ export class Signup extends Component {
           <img src={logo} className="signup-logo" alt="logo" />
 
           <h1 className="signup-header">— Sign Up —</h1>
-          <label>
-            <h4 className="signup-nano-header">Nano Info</h4>
-            <input
-              className="signup-username-input"
-              placeholder="Username"
-              onChange={this.handleChange}
-              value={this.state.username}
-              name="username"
-            />
-          </label>
-          <label className="signup-email-label">
-            <input
-              className="signup-email-input"
-              placeholder="Email"
-              onChange={this.handleChange}
-              value={this.state.email}
-              name="email"
-            />
-          </label>
-          <label>
-            <input
-              className="signup-password-input"
-              placeholder="Password"
-              onChange={this.handleChange}
-              value={this.state.password}
-              name="password"
-              type="password"
-            />
-            {/* <h4 className="signup-instagram-header">Instagram Info</h4>
-            <input
-              placeholder="IG Account Name"
-              onChange={this.handleChange}
-              value={this.state.igaccountname}
-              name="igaccountname"
-            />
-            <input
-              placeholder="IG @Username"
-              onChange={this.handleChange}
-              value={this.state.atname}
-              name="atname"
-            />
-            <input
-              placeholder="Profile Picture (link)"
-              onChange={this.handleChange}
-              value={this.state.profilepicture}
-              name="profilepicture"
-            />
-            <input
-              placeholder="Describe Your Account"
-              onChange={this.handleChange}
-              value={this.state.accountdescription}
-              name="accountdescription"
-            />
-            <input
-              placeholder="Follower Count"
-              onChange={this.handleChange}
-              value={this.state.followercount}
-              name="followercount"
-            />
-            <input
-              placeholder="Average Likes Per Post"
-              onChange={this.handleChange}
-              value={this.state.averagelikes}
-              name="averagelikes"
-            />
-            <input
-              placeholder="Average Comments"
-              onChange={this.handleChange}
-              value={this.state.averagecomments}
-              name="averagecomments"
-            />
-            <input
-              placeholder="Engagement Rate %"
-              onChange={this.handleChange}
-              value={this.state.engagementrate}
-              name="engagementrate"
-            />
-            <input
-              placeholder="Target Audience"
-              onChange={this.handleChange}
-              value={this.state.audiencebreakdown}
-              name="audiencebreakdown"
-            />
-            <input
-              placeholder="Price Per Post"
-              onChange={this.handleChange}
-              value={this.state.priceperpost}
-              name="priceperpost"
-            />
-            <input
-              placeholder="Contact Information"
-              onChange={this.handleChange}
-              value={this.state.contactinfo}
-              name="contactinfo"
-            /> */}
-          </label>
+          <div className="signup-both-sides">
+            <div className="signup-left-side">
+              <h4 className="signup-nano-header">Become An Influencer</h4>
+              <input
+                className="signup-username-input"
+                placeholder="Nano Username"
+                onChange={this.handleChange}
+                value={this.state.username}
+                name="username"
+              />
+
+              <input
+                className="signup-email-input"
+                placeholder="Email"
+                onChange={this.handleChange}
+                value={this.state.email}
+                name="email"
+              />
+
+              <input
+                className="signup-password-input"
+                placeholder="Nano Password"
+                onChange={this.handleChange}
+                value={this.state.password}
+                name="password"
+                type="password"
+              />
+              {/* <h4 className="signup-instagram-header">Instagram Info</h4> */}
+              <input
+                placeholder="IG Account Name"
+                onChange={this.handleChange}
+                value={this.state.igaccountname}
+                name="igaccountname"
+              />
+              <input
+                placeholder="IG @Username"
+                onChange={this.handleChange}
+                value={this.state.atname}
+                name="atname"
+              />
+              <input
+                placeholder="Profile Picture (link)"
+                onChange={this.handleChange}
+                value={this.state.profilepicture}
+                name="profilepicture"
+              />
+            </div>
+            {/* HALFWAY POINT */}
+            <div className="signup-right-side">
+              <input
+                placeholder="Follower Count"
+                onChange={this.handleChange}
+                value={this.state.followercount}
+                name="followercount"
+              />
+              <input
+                placeholder="Average Likes Per Post"
+                onChange={this.handleChange}
+                value={this.state.averagelikes}
+                name="averagelikes"
+              />
+              <input
+                placeholder="Average Comments"
+                onChange={this.handleChange}
+                value={this.state.averagecomments}
+                name="averagecomments"
+              />
+              <input
+                placeholder="Engagement Rate %"
+                onChange={this.handleChange}
+                value={this.state.engagementrate}
+                name="engagementrate"
+              />
+              <input
+                placeholder="Target Audience"
+                onChange={this.handleChange}
+                value={this.state.audiencebreakdown}
+                name="audiencebreakdown"
+              />
+              <input
+                placeholder="Price Per Post"
+                onChange={this.handleChange}
+                value={this.state.priceperpost}
+                name="priceperpost"
+              />
+              <input
+                placeholder="Describe Your Account"
+                onChange={this.handleChange}
+                value={this.state.accountdescription}
+                name="accountdescription"
+              />
+              <input
+                placeholder="Contact Information"
+                onChange={this.handleChange}
+                value={this.state.contactinfo}
+                name="contactinfo"
+              />
+            </div>
+          </div>
 
           <button className="signup-form-submit-button">Submit</button>
         </form>

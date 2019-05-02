@@ -13,6 +13,7 @@
 
 .signup-background-image {
   position: fixed;
+  z-index: -1;
   top: 0;
   left: 0;
 }
@@ -39,6 +40,7 @@ input {
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 15px;
+  margin-right: 15px;
 }
 
 label {
@@ -57,14 +59,21 @@ input:focus {
   width: 30%;
 }
 
+@media only screen and (max-width: 800px) {
+  .signup-logo {
+    margin-top: 450px;
+  }
+}
+
 .signup-form {
   // border: 1px solid red;
   display: flex;
   background-color: white;
-  height: 80vh;
-  width: 30%;
-  height: 70%;
+  height: 96vh;
+  width: 35%;
+  // height: 95%;
   text-align: center;
+  overflow: scroll;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -77,8 +86,11 @@ input:focus {
 
 @media only screen and (max-width: 800px) {
   .signup-form {
-    height: 75%;
-    width: 75%;
+    // padding-top: 400px;
+    // height: 100%;
+    height: 95%;
+    width: 80%;
+    // top: 75%;
   }
 }
 
@@ -126,10 +138,17 @@ input:focus {
   padding-bottom: 12px;
   border-radius: 45px;
   margin-top: 10px;
+  margin-bottom: 40px;
   // margin-left: 12px;
   font-family: $font;
   font-size: 14px;
   // border: 1px solid red;
+}
+
+@media only screen and (max-width: 800px) {
+  .signup-form-submit-button {
+    display: flex;
+  }
 }
 
 .signup-form-submit-button:hover {

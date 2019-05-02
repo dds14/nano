@@ -7,11 +7,11 @@ const { SERVER_PORT, SESSION_SECRET } = process.env;
 const app = express();
 
 app.use(express.json());
-const { signup, login } = require("./controllers/authController");
-// const {
-//   influencerSignUp,
-//   getInfluencerInfo
-// } = require("./controllers/authController");
+const {
+  signup,
+  login,
+  getinfluencerprofiles
+} = require("./controllers/authController");
 
 massive(process.env.CONNECTION_STRING)
   .then(db => {
@@ -37,11 +37,8 @@ app.use(
 app.post("/auth/signup", signup);
 app.post("/auth/login", login);
 
-// Influencer and Brand Account Creations
-// app.post("/auth/influencersignup", influencerSignUp);
-
-// Influencer and Brand - Displaying the information on the dashboard
-// app.get("/auth/influencersignup", getInfluencerInfo);
+// Influencer  - Displaying the information on the dashboard
+app.get("/auth/influencerprofiles", getinfluencerprofiles);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on ${SERVER_PORT}`);
