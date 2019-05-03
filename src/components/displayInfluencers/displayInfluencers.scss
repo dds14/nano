@@ -1,7 +1,11 @@
 @import "../../variables.scss";
 
+.display-influencers {
+  font-family: $font;
+}
+
 .whole-div {
-  border: 1px solid green;
+  // border: 1px solid green;
   display: flex;
   flex-wrap: wrap;
   width: 90%;
@@ -11,8 +15,106 @@
 }
 
 .overall-account-display {
-  //   display: flex;
-  border: 1px solid red;
+  // border: 1px solid red;
   padding: 10px;
-  padding-bottom: 120px;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.home-influencers-title {
+  font-size: 45px;
+  margin-top: 55px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.home-account-name {
+  // border: 1px solid red;
+  padding-bottom: 25px;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.home-profile-picture {
+  border-radius: 35px;
+  width: 24vw;
+}
+
+.home-account-atname {
+  font-size: 17px;
+  padding-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.home-follower-count {
+  font-size: 17px;
+  padding-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.home-average-likes {
+  font-size: 17px;
+  padding-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.home-contact-influencer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 30%;
+  border-radius: 45px;
+  background-color: $accent;
+  color: black;
+  margin-top: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 35px;
+  padding-left: 35px;
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+  margin-top: 32px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.home-contact-influencer-button {
+  font-size: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border-radius: 45px;
+  background-color: $accent;
+  color: black;
+  letter-spacing: 2px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.ello {
+  display: flex;
+  justify-content: center;
+}
+
+.home-contact-influencer:hover {
+  opacity: 0.5;
+  color: black;
+}
+
+.home-contact-influencer:focus {
+  outline: none;
 }

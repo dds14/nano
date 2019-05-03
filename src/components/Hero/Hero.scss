@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .home {
-  // border: $border-test-red;
+  border-bottom: 1px solid $accent;
   width: 100vw;
   height: 90vh;
   display: flex;
