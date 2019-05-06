@@ -46,7 +46,7 @@ export default class DisplayInfluencers extends Component {
                   <div className="home-contact-influencer">
                     <button className="home-contact-influencer-button">
                       {" "}
-                      Contact
+                      <a href={"mailto:" + val.email}>Contact</a>
                     </button>
                   </div>
                 </div>
