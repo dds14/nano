@@ -14,7 +14,9 @@ export default class Navbar extends Component {
         <div className="nav-left-side">
           <img src={logo} className="nav-logo" alt="logo" />
           <p className="nav-brands">Brands</p>
-          <p className="nav-influencer">I'm an influencer</p>
+          <Link to="/contact" className="nav-influencer">
+            Contact Us
+          </Link>
         </div>
         <div className="nav-right-side">
           <Link to="/login" className="nav-login">
