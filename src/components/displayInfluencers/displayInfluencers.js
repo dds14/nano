@@ -42,6 +42,9 @@ export default class DisplayInfluencers extends Component {
                 <div className="home-average-likes">
                   {"Average Likes: " + val.averagelikes}
                 </div>
+                <div className="home-price">
+                  {"Price Per Post: " + val.priceperpost}
+                </div>
                 <div className="ello">
                   <div className="home-contact-influencer">
                     <button className="home-contact-influencer-button">
