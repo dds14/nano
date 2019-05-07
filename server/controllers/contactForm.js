@@ -15,13 +15,21 @@ module.exports = {
     let mailOptions = {
       from: "Nano",
       to: "dereksams9@gmail.com",
-      subject: "NODEMAILER",
+      subject: "Contact Form From Nano",
       text: "Something Happened",
-      html: `<h2>You've got a contact form from Nano.</h2>
-            <p>First Name: ${req.body.first_name}<p>
-            <p>Last Name: ${req.body.last_name}<p>
-            <p>Email: ${req.body.email}<p>
-            <p>Message: ${req.body.message}<p>`
+      html: `
+         <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto');
+        </style>
+            <h1>You've got a contact form from Nano.</h1>
+            <p style="color: black; font-weight: bold; font-size: 18px;">First Name: 
+            <p style="font-size: 14px;"> ${req.body.first_name}</p>
+            <p style="color: black; font-weight: bold; font-size: 18px;">Last Name:</p> 
+            <p style="font-size: 14px;">${req.body.last_name}</p>
+            <p style="color: black; font-weight: bold; font-size: 18px;">Email:</p> 
+            <p style="font-size: 14px;">${req.body.email}</p>
+            <p style="color: black; font-weight: bold; font-size: 18px;">Message:</p> 
+            <p style="font-size: 14px;">${req.body.message}</p>`
     };
 
     transporter.sendMail(mailOptions, function(err, res) {
