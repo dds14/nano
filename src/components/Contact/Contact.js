@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Contact.scss";
 import { Redirect } from "react-router-dom";
+const nodemailer = require("nodemailer");
 
 export default class Contact extends Component {
   constructor(props) {
@@ -19,23 +20,21 @@ export default class Contact extends Component {
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(this.state.first_name);
-    console.log(this.state.last_name);
-    console.log(this.state.email);
-    console.log(this.state.message);
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
-    // this.setState({
-    //   first_name: this.state.first_name,
-    //   last_name: this.state.last_name,
-    //   email: this.state.email,
-    //   message: this.state.message
-    // });
+    console.log("submittedd");
 
-    this.setState({ button: true });
+    let data = {
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
+      email: this.state.email,
+      message: this.state.message
+    };
+
+    axios.post("/api/contact", data).then(this.setState({ button: true }));
   }
 
   render() {
@@ -78,6 +77,7 @@ export default class Contact extends Component {
             value={this.state.message}
             name="message"
           />
+          <button className="contact-form-submit-button">Get In Touch</button>
         </form>
       </div>
     );

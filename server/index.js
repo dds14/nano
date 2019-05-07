@@ -2,6 +2,7 @@ require("dotenv").config();
 const massive = require("massive");
 const express = require("express");
 const session = require("express-session");
+const nodemailer = require("nodemailer");
 const { SERVER_PORT, SESSION_SECRET } = process.env;
 
 const app = express();
@@ -13,6 +14,8 @@ const {
   getinfluencerprofiles,
   getSession
 } = require("./controllers/authController");
+
+const { addContactForm } = require("./controllers/contactForm");
 
 massive(process.env.CONNECTION_STRING)
   .then(db => {
@@ -40,6 +43,9 @@ app.post("/auth/login", login);
 
 // Influencer  - Displaying the information on the dashboard
 app.get("/auth/influencerprofiles", getinfluencerprofiles);
+
+// Sends Email
+app.post("/api/contact", addContactForm);
 
 // Holds session
 app.get("auth/cookie", getSession);
