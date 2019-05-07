@@ -165,7 +165,7 @@ export class Signup extends Component {
                 name="accountdescription"
               />
               <input
-                placeholder="Contact Information"
+                placeholder="Phone Number"
                 onChange={this.handleChange}
                 value={this.state.contactinfo}
                 name="contactinfo"

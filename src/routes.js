@@ -12,6 +12,8 @@ export default (
   <Switch>
     <Route path="/influencer-dashboard" component={influencerDashboard} />
     <Route path="/contact" component={Contact} />
+    {/* <Route path="/influencer-signup" component={influencerSignUp} /> */}
+    {/* <Route path="/brand-signup" component={brandSignUp} /> */}
     <Route path="/signup" component={Signup} />
     <Route path="/login" component={Login} />
     <Route exact path="/" component={Home} />
