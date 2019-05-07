@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Contact.scss";
 import { Redirect } from "react-router-dom";
-const nodemailer = require("nodemailer");
 
 export default class Contact extends Component {
   constructor(props) {
@@ -35,6 +34,7 @@ export default class Contact extends Component {
     };
 
     axios.post("/api/contact", data).then(this.setState({ button: true }));
+    console.log(data);
   }
 
   render() {

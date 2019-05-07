@@ -17,7 +17,11 @@ module.exports = {
       to: "dereksams9@gmail.com",
       subject: "NODEMAILER",
       text: "Something Happened",
-      html: "<b>Nodemail Sent!</b>"
+      html: `<h2>You've got a contact form from Nano.</h2>
+            <p>First Name: ${req.body.first_name}<p>
+            <p>Last Name: ${req.body.last_name}<p>
+            <p>Email: ${req.body.email}<p>
+            <p>Message: ${req.body.message}<p>`
     };
 
     transporter.sendMail(mailOptions, function(err, res) {
@@ -27,6 +31,7 @@ module.exports = {
         console.log("Email Sent");
       }
     });
+    console.log(req.body);
     res.sendStatus(200);
   }
 };
