@@ -25,7 +25,7 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      // LOGGED OUT NAVBAR
+      // LOGGED OUT NAVBARr
       <div className="navbar">
         <div className="nav-left-side">
           <img src={logo} className="nav-logo" alt="logo" />
