@@ -21,6 +21,7 @@ class Login extends Component {
     console.log(this.state.username);
     console.log(this.state.password);
   }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -69,8 +70,10 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = reduxState => reduxState;
-
+const mapStateToProps = reduxState => {
+  console.log("LOGIN REDUX STATE: ", reduxState);
+  return reduxState;
+};
 export default connect(
   mapStateToProps,
   { login }

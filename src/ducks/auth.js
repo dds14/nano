@@ -20,6 +20,7 @@ const initialState = {
 // Action Types
 const SIGN_UP = "SIGN_UP";
 const LOGIN = "LOGIN";
+const LOGOUT = "LOGOUT";
 const ME = "ME";
 const GET_SESSION = "GET_SESSION";
 
@@ -75,6 +76,13 @@ export function getSession() {
   };
 }
 
+export function logout() {
+  return {
+    type: LOGOUT,
+    payload: axios.get("/auth/logout")
+  };
+}
+
 export function me() {
   return {
     type: ME,
@@ -83,6 +91,7 @@ export function me() {
 }
 
 export default function reducer(state = initialState, action) {
+  console.log(action);
   switch (action.type) {
     case `${SIGN_UP}_FULFILLED`:
       console.log(action.payload.data);
@@ -108,6 +117,12 @@ export default function reducer(state = initialState, action) {
         ...state,
         username: action.payload.data.username,
         password: action.payload.data.password
+      };
+    case `${LOGOUT}_FULFILLED`:
+      return {
+        ...state,
+        username: "",
+        password: ""
       };
     case `${ME}_FULFILLED`:
       return {

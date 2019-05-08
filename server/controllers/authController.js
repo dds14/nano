@@ -100,10 +100,17 @@ const getProfile = (req, res) => {
   db.getprofile(+req.params.id).then(profile => res.status(200).json(profile));
 };
 
+const logout = (req, res) => {
+  console.log("LOGGED OUT");
+  req.session.destroy();
+  res.sendStatus(200).json("logged out");
+};
+
 module.exports = {
   signup,
   login,
   getinfluencerprofiles,
   getSession,
-  getProfile
+  getProfile,
+  logout
 };

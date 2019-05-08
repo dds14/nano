@@ -15,7 +15,7 @@ export default class Hero extends Component {
               <h1 className="home-nano">Nano</h1>
             </span>
             <br />
-            <h3 className="home-tagline">Influencer Marketing Made Eas</h3>
+            <h3 className="home-tagline">Influencer Marketing Made Easy</h3>
           </div>
 
           <div className="hero-buttons">

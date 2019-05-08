@@ -13,7 +13,8 @@ const {
   login,
   getinfluencerprofiles,
   getSession,
-  getProfile
+  getProfile,
+  logout
 } = require("./controllers/authController");
 
 const { addContactForm } = require("./controllers/contactForm");
@@ -53,6 +54,9 @@ app.get("/api/profile/:id", getProfile);
 
 // Holds session
 app.get("/api/users", getSession);
+
+// Log out
+app.get("/auth/logout", logout);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on ${SERVER_PORT}`);
