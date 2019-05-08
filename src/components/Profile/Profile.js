@@ -15,7 +15,8 @@ export default class Profile extends Component {
 
   componentDidMount() {
     console.log("MOUNTED");
-    axios.get(`/auth/profile/${this.props.match.params.id}`).then(res => {
+    axios.get(`/api/profile/${this.props.match.params.id}`).then(res => {
+      console.log(res);
       this.setState({
         profile: res.data
       });

@@ -52,7 +52,7 @@ app.post("/api/contact", addContactForm);
 app.get("/api/profile/:id", getProfile);
 
 // Holds session
-app.get("/auth/cookie", getSession);
+app.get("/api/users", getSession);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on ${SERVER_PORT}`);
