@@ -24,30 +24,56 @@ export default class Navbar extends Component {
   }
 
   render() {
-    return (
-      // LOGGED OUT NAVBARr
-      <div className="navbar">
-        <div className="nav-left-side">
-          <img src={logo} className="nav-logo" alt="logo" />
-          <p className="nav-brands">Brands</p>
-          <Link to="/contact" className="nav-influencer">
-            Contact Us
-          </Link>
+    if (this.state.id === null) {
+      return (
+        <div className="navbar">
+          <div className="nav-left-side">
+            <img src={logo} className="nav-logo" alt="logo" />
+            <p className="nav-brands">Brands</p>
+            <Link to="/contact" className="nav-influencer">
+              Contact Us
+            </Link>
+          </div>
+          <div className="nav-right-side">
+            {/* <Link to={`/profile/${this.state.id}`} className="nav-profile">
+              Profile
+            </Link> */}
+            <Link to="/login" className="nav-login">
+              Login
+            </Link>
+            <Link to="/login" className="nav" onClick={this.logout} />
+            <Link to="/signup" className="nav-sign-up">
+              <span className="sign-up-span">Sign up for free</span>
+            </Link>
+          </div>
         </div>
-        <div className="nav-right-side">
-          <Link to={`/profile/${this.state.id}`} className="nav-profile">
-            Profile
-          </Link>
-          <Link to="/login" className="nav-login">
-            Login
-          </Link>
-          <Link to="/login" className="nav" onClick={this.logout} />
-          <Link to="/signup" className="nav-sign-up">
-            <span className="sign-up-span">Sign up for free</span>
-          </Link>
+      );
+    } else {
+      return (
+        // LOGGED OUT NAVBAR
+        <div className="navbar">
+          <div className="nav-left-side">
+            <img src={logo} className="nav-logo" alt="logo" />
+            <p className="nav-brands">Brands</p>
+            <Link to="/contact" className="nav-influencer">
+              Contact Us
+            </Link>
+          </div>
+          <div className="nav-right-side">
+            <Link to={`/profile/${this.state.id}`} className="nav-profile">
+              Profile
+            </Link>
+            {/* <Link to="/login" className="nav-login">
+              Login
+            </Link>
+            <Link to="/login" className="nav" onClick={this.logout} />
+            <Link to="/signup" className="nav-sign-up">
+              <span className="sign-up-span">Sign up for free</span>
+            </Link> */}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
