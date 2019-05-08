@@ -18,8 +18,8 @@ class Login extends Component {
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(this.state.username);
-    console.log(this.state.password);
+    // console.log(this.state.username);
+    // console.log(this.state.password);
   }
 
   handleSubmit(e) {
@@ -71,7 +71,7 @@ class Login extends Component {
 }
 
 const mapStateToProps = reduxState => {
-  console.log("LOGIN REDUX STATE: ", reduxState);
+  // console.log("LOGIN REDUX STATE: ", reduxState);
   return reduxState;
 };
 export default connect(

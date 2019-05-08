@@ -14,9 +14,7 @@ export default class Profile extends Component {
   }
 
   componentDidMount() {
-    console.log("MOUNTED");
     axios.get(`/api/profile/${this.props.match.params.id}`).then(res => {
-      console.log(res);
       this.setState({
         profile: res.data
       });
@@ -24,13 +22,22 @@ export default class Profile extends Component {
   }
 
   render() {
+    console.log("state of the profile below");
     console.log(this.state.profile);
-    console.log(this.props);
+    // console.log(this.props);
     // This page will display the current users profile
     // Each part of their profile will be editable, which will manipulate the database
     return (
-      <div>
-        <h1>Profile</h1>
+      <div className="whole-div">
+        {this.state.profile.map((val, index) => {
+          return (
+            <div>
+              <div>
+                <h1>{val.followercount}</h1>
+              </div>
+            </div>
+          );
+        })}
       </div>
     );
   }

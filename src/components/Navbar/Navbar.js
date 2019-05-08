@@ -17,7 +17,6 @@ class Navbar extends Component {
   }
 
   componentDidMount() {
-    console.log("navbar mounted");
     axios.get("/api/users").then(res => {
       this.setState({
         id: res.data.userId
@@ -26,7 +25,7 @@ class Navbar extends Component {
   }
 
   logout() {
-    console.log(this.props);
+    // console.log(this.props);
     this.props.logout().then(res => {
       this.setState({
         id: null
@@ -35,7 +34,7 @@ class Navbar extends Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     if (this.state.id === null) {
       return (
         // LOGGED OUT NAVBAR
@@ -84,7 +83,7 @@ class Navbar extends Component {
 }
 
 function mapStateToProps(reduxState) {
-  console.log("REDUX STATE: ", reduxState);
+  // console.log("REDUX STATE: ", reduxState);
   return reduxState;
 }
 

@@ -9,7 +9,7 @@ import influencerDashboard from "./components/Dashboards/influencerDashboard/inf
 
 export default (
   <Switch>
-    <Route path="/influencer-dashboard" component={influencerDashboard} />
+    {/* <Route path="/influencer-dashboard" component={influencerDashboard} /> */}
     <Route path="/signup" component={Signup} />
     <Route path="/login" component={Login} />
     <Route path="/contact" component={Contact} />
