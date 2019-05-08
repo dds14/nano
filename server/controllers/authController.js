@@ -97,9 +97,7 @@ const getSession = function(req, res, next) {
 const getProfile = (req, res) => {
   console.log(req.params.id);
   const db = req.app.get("db");
-  db.getprofile(+req.session.user.userId).then(profile =>
-    res.status(200).json(profile)
-  );
+  db.getprofile(+req.params.id).then(profile => res.status(200).json(profile));
 };
 
 module.exports = {

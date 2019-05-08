@@ -17,7 +17,7 @@ export default (
     {/* <Route path="/brand-signup" component={brandSignUp} /> */}
     <Route path="/signup" component={Signup} />
     <Route path="/login" component={Login} />
-    <Route path="/profile" component={Profile} />
+    <Route path="/profile/:id" component={Profile} />
     <Route exact path="/" component={Home} />
   </Switch>
 );

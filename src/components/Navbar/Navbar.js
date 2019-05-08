@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import logo from "../../Images/logo.png";
 import { login } from "../../ducks/auth";
 
@@ -8,8 +9,18 @@ export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: false
+      loggedIn: false,
+      id: null
     };
+  }
+
+  componentDidMount() {
+    console.log("navbar mounted");
+    axios.get("/api/users").then(res => {
+      this.setState({
+        id: res.data.userId
+      });
+    });
   }
 
   render() {
@@ -24,12 +35,9 @@ export default class Navbar extends Component {
           </Link>
         </div>
         <div className="nav-right-side">
-          {/* <Link
-            to={`/profile/${this.props.match.params.id}`}
-            className="nav-profile"
-          >
+          <Link to={`/profile/${this.state.id}`} className="nav-profile">
             Profile
-          </Link> */}
+          </Link>
           <Link to="/login" className="nav-login">
             Login
           </Link>

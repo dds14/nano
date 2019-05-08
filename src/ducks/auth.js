@@ -71,7 +71,7 @@ export function login(username, password) {
 export function getSession() {
   return {
     type: GET_SESSION,
-    payload: axios.get("/auth/cookie")
+    payload: axios.get("/api/users")
   };
 }
 
