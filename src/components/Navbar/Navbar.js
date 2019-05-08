@@ -35,9 +35,6 @@ export default class Navbar extends Component {
             </Link>
           </div>
           <div className="nav-right-side">
-            {/* <Link to={`/profile/${this.state.id}`} className="nav-profile">
-              Profile
-            </Link> */}
             <Link to="/login" className="nav-login">
               Login
             </Link>
@@ -61,15 +58,8 @@ export default class Navbar extends Component {
           </div>
           <div className="nav-right-side">
             <Link to={`/profile/${this.state.id}`} className="nav-profile">
-              Profile
+              My Profile
             </Link>
-            {/* <Link to="/login" className="nav-login">
-              Login
-            </Link>
-            <Link to="/login" className="nav" onClick={this.logout} />
-            <Link to="/signup" className="nav-sign-up">
-              <span className="sign-up-span">Sign up for free</span>
-            </Link> */}
           </div>
         </div>
       );

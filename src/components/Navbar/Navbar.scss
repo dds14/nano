@@ -126,3 +126,22 @@ $nav-background: white;
   width: 90px;
   height: 90px;
 }
+
+.nav-profile {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-size: $nav-font-size;
+  text-decoration: none;
+  position: absolute;
+  right: 7%;
+}
+
+.nav-profile:hover {
+  opacity: $text-hover;
+}
+
+.nav-profile:focus {
+  outline: none;
+}
