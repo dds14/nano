@@ -72,7 +72,10 @@ class Navbar extends Component {
             <Link to={`/profile/${this.state.id}`} className="nav-profile">
               My Profile
             </Link>
-            <li onClick={this.logout}>Log Out</li>
+            <p className="nav-logout" onClick={this.logout}>
+              {" "}
+              Log Out
+            </p>
           </div>
         </div>
       );

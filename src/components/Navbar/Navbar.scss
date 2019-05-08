@@ -135,7 +135,7 @@ $nav-background: white;
   font-size: $nav-font-size;
   text-decoration: none;
   position: absolute;
-  right: 7%;
+  right: 14%;
 }
 
 .nav-profile:hover {
@@ -143,5 +143,24 @@ $nav-background: white;
 }
 
 .nav-profile:focus {
+  outline: none;
+}
+
+.nav-logout {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-size: $nav-font-size;
+  text-decoration: none;
+  position: absolute;
+  right: 5%;
+}
+
+.nav-logout:hover {
+  opacity: $text-hover;
+}
+
+.nav-logout:focus {
   outline: none;
 }
