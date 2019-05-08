@@ -12,7 +12,8 @@ const {
   signup,
   login,
   getinfluencerprofiles,
-  getSession
+  getSession,
+  getProfile
 } = require("./controllers/authController");
 
 const { addContactForm } = require("./controllers/contactForm");
@@ -47,8 +48,11 @@ app.get("/auth/influencerprofiles", getinfluencerprofiles);
 // Sends Email
 app.post("/api/contact", addContactForm);
 
+// Gets profile information
+app.get("/api/profile/:id", getProfile);
+
 // Holds session
-app.get("auth/cookie", getSession);
+app.get("/auth/cookie", getSession);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on ${SERVER_PORT}`);

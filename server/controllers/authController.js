@@ -41,9 +41,12 @@ const signup = async (req, res) => {
     .catch(err => {
       res.status(400).json("Username already exists");
     });
-  req.session.user = { username: result[0].username };
-  // console.log(req.session.user);
-  res.json(result);
+  req.session.user = {
+    username: result[0].username,
+    userId: result[0].id
+  };
+
+  res.json(req.session.user);
 };
 
 // Main Account Login
@@ -58,8 +61,11 @@ const login = async (req, res) => {
     );
     if (isMatch) {
       req.session.user = {
-        username: results[0].username
+        username: results[0].username,
+        userId: results[0].id
       };
+      // THE GOOD SPOT
+      console.log(req.session.user.userId);
       // console.log(results);
       res.json({ username: results[0].username });
     } else {
@@ -83,14 +89,23 @@ const getinfluencerprofiles = (req, res) => {
 const getSession = function(req, res, next) {
   const { session } = req;
   if (!session.user) {
-    session.user = { username: "" };
+    session.user = { username: "", userId };
   }
   res.json(session.user);
+};
+
+const getProfile = (req, res) => {
+  console.log(req.params.id);
+  const db = req.app.get("db");
+  db.getprofile(+req.session.user.userId).then(profile =>
+    res.status(200).json(profile)
+  );
 };
 
 module.exports = {
   signup,
   login,
   getinfluencerprofiles,
-  getSession
+  getSession,
+  getProfile
 };

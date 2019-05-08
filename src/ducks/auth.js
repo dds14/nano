@@ -88,20 +88,20 @@ export default function reducer(state = initialState, action) {
       console.log(action.payload.data);
       return {
         ...state,
-        username: action.payload.data[0].username,
-        email: action.payload.data[0].email,
-        password: action.payload.data[0].password,
-        igaccountname: action.payload.data[0].igaccountname,
-        atname: action.payload.data[0].atname,
-        profilepicture: action.payload.data[0].profilepicture,
-        accountdescription: action.payload.data[0].accountdescription,
-        followercount: action.payload.data[0].followercount,
-        averagelikes: action.payload.data[0].averagelikes,
-        averagecomments: action.payload.data[0].averagecomments,
-        engagementrate: action.payload.data[0].engagementrate,
-        audiencebreakdown: action.payload.data[0].audiencebreakdown,
-        priceperpost: action.payload.data[0].priceperpost,
-        contactinfo: action.payload.data[0].contactinfo
+        username: action.payload.data.username,
+        email: action.payload.data.email,
+        password: action.payload.data.password,
+        igaccountname: action.payload.data.igaccountname,
+        atname: action.payload.data.atname,
+        profilepicture: action.payload.data.profilepicture,
+        accountdescription: action.payload.data.accountdescription,
+        followercount: action.payload.data.followercount,
+        averagelikes: action.payload.data.averagelikes,
+        averagecomments: action.payload.data.averagecomments,
+        engagementrate: action.payload.data.engagementrate,
+        audiencebreakdown: action.payload.data.audiencebreakdown,
+        priceperpost: action.payload.data.priceperpost,
+        contactinfo: action.payload.data.contactinfo
       };
     case `${LOGIN}_FULFILLED`:
       return {

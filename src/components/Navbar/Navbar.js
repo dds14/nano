@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import logo from "../../Images/logo.png";
+import { login } from "../../ducks/auth";
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -23,9 +24,16 @@ export default class Navbar extends Component {
           </Link>
         </div>
         <div className="nav-right-side">
+          {/* <Link
+            to={`/profile/${this.props.match.params.id}`}
+            className="nav-profile"
+          >
+            Profile
+          </Link> */}
           <Link to="/login" className="nav-login">
             Login
           </Link>
+          <Link to="/login" className="nav" onClick={this.logout} />
           <Link to="/signup" className="nav-sign-up">
             <span className="sign-up-span">Sign up for free</span>
           </Link>
@@ -34,3 +42,9 @@ export default class Navbar extends Component {
     );
   }
 }
+
+// const mapStateToProps = reduxState => {
+//   return {
+//     username: reduxState.auth.username
+//   };
+// };
