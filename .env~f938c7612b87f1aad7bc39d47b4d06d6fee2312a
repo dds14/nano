@@ -1,6 +1,0 @@
-CONNECTION_STRING = postgres://odrzffjgyrkjun:68abfcc747c6567d1c48462d21982c3f0b422c8cfb3ac779049a74c06da53c47@ec2-54-243-241-62.compute-1.amazonaws.com:5432/dchb6s7ihbqei8?ssl=true
-
-SESSION_SECRET = dk393igerw09w4gewan
-
-SERVER_PORT = 4040
-
