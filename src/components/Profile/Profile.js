@@ -9,6 +9,7 @@ export default class Profile extends Component {
 
     this.state = {
       profile: [],
+      email: "",
       igaccountname: "",
       atname: "",
       profilepicture: "",
@@ -22,6 +23,7 @@ export default class Profile extends Component {
       contactinfo: "",
       showEdit: false
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -34,32 +36,32 @@ export default class Profile extends Component {
 
   // Edit Profile
   handleSubmit() {
+    console.log("HANDLE SUBMIT: EDITING THE PROFILE");
     axios
       .put("/api/editprofile", {
-        igaccountname: this.state.igaccountname,
-        atname: this.state.atname,
         profilepicture: this.state.profilepicture,
-        accountdescription: this.state.accountdescription,
+        igaccountname: this.state.atname,
         followercount: this.state.followercount,
         averagelikes: this.state.averagelikes,
         averagecomments: this.state.averagecomments,
         engagementrate: this.state.engagementrate,
-        audiencebreakdown: this.state.audiencebreakdown,
         priceperpost: this.state.priceperpost,
-        contactinfo: this.state.contactinfo
+        audiencebreakdown: this.state.audiencebreakdown,
+        accountdescription: this.state.accountdescription,
+        email: this.state.email
       })
       .then(res => {
-        this.setState({
-          profile: res.data,
-          showEdit: false
-        });
+        console.log("RES .then");
+        console.log(res.data);
+        // this.setState({
+        //   profile: res.data
+        // });
       });
   }
 
+  // This page will display the current users profile
+  // Each part of their profile will be editable, which will manipulate the database
   render() {
-    console.log(this.state.showEdit);
-    // This page will display the current users profile
-    // Each part of their profile will be editable, which will manipulate the database
     return (
       <div>
         <Navbar />
@@ -89,17 +91,17 @@ export default class Profile extends Component {
                 </div>
                 <div className="all-profile-info">
                   <div className="profile-left-side">
+                    <p>{"IG Username: " + val.atname}</p>
+                    <br />
                     <p>{"Followers: " + val.followercount}</p>
                     <br />
                     <p>{"Average Likes: " + val.averagelikes}</p>
                     <br />
                     <p>{"Average Comments: " + val.averagecomments}</p>
                     <br />
-                    <p>{"Engagement Rate: " + val.engagementrate}</p>
-                    <br />
                   </div>
                   <div className="profile-right-side">
-                    <p>{"Description: " + val.followercount}</p>
+                    <p>{"Engagement Rate: " + val.engagementrate}</p>
                     <br />
                     <p>{"Price Per Post: " + val.priceperpost}</p>
                     <br />
@@ -108,54 +110,88 @@ export default class Profile extends Component {
                     <p>{"Bio: " + val.accountdescription}</p>
                   </div>
                 </div>
-                {/* <div className="button-div">
-                  <button className="edit-profile-button">Edit Profile</button>
-                </div> */}
               </div>
             );
           })}
         </div>
-        {this.state.showEdit ? (
-          <form
-            onSubmit={this.handlesubmit}
-            autoComplete="off"
-            className="profile-form"
-          >
-            <label>Home Course</label>
-            <input
-              onChange={this.handleChange}
-              placeholder="course"
-              name="course"
-              value={this.state.course}
-              autoComplete="off"
-            />
-            <label> Handicap</label>
-            <input
-              onChange={this.handleChange}
-              name="handicap"
-              value={this.state.handicap}
-              type="number"
-              autoComplete="off"
-            />
-            <label>Rounds Per Year</label>
-            <input
-              value={this.state.rounds}
-              onChange={this.handleChange}
-              name="rounds"
-              type="number"
-              autoComplete="off"
-            />
-            <label>Career Hole in One</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.career}
-              name="career"
-              type="number"
-              autoComplete="off"
-            />
-            <button onClick={this.handleSubmit}>submit</button>
-          </form>
-        ) : null}
+        <form
+          autocomplete="off"
+          className="edit-profile-form"
+          onSubmit={this.handleSubmit}
+        >
+          <h1>— Edit Profile —</h1>
+          <div>
+            <div>
+              <input
+                placeholder="Profile Picture (link)"
+                onChange={this.handleChange}
+                value={this.state.profilepicture}
+                name="profilepicture"
+              />
+              <input
+                placeholder="IG Username"
+                onChange={this.handleChange}
+                value={this.state.atname}
+                name="atname"
+              />
+              <input
+                placeholder="Followers"
+                onChange={this.handleChange}
+                value={this.state.followercount}
+                name="followers"
+              />
+
+              <input
+                placeholder="Average Likes"
+                onChange={this.handleChange}
+                value={this.state.averagelikes}
+                name="averagelikes"
+              />
+
+              <input
+                placeholder="Average Comments"
+                onChange={this.handleChange}
+                value={this.state.averagecomments}
+                name="averagecomments"
+              />
+            </div>
+            {/* HALFWAY POINT */}
+            <div>
+              <input
+                placeholder="Engagement Rate"
+                onChange={this.handleChange}
+                value={this.state.engagementrate}
+                name="engagementrate"
+              />
+              <input
+                placeholder="Price Per Post"
+                onChange={this.handleChange}
+                value={this.state.priceperpost}
+                name="priceperpost"
+              />
+              <input
+                placeholder="Audience Breakdown"
+                onChange={this.handleChange}
+                value={this.state.audiencebreakdown}
+                name="audiencebreakdown"
+              />
+              <input
+                placeholder="Bio"
+                onChange={this.handleChange}
+                value={this.state.accountdescription}
+                name="accountdescription"
+              />
+              <input
+                placeholder="Email Address"
+                onChange={this.handleChange}
+                value={this.state.email}
+                name="email"
+              />
+            </div>
+          </div>
+
+          <button>Submit</button>
+        </form>
       </div>
     );
   }

@@ -65,7 +65,7 @@ const login = async (req, res) => {
         userId: results[0].id
       };
       // THE GOOD SPOT
-      console.log(req.session.user.userId);
+      // console.log(req.session.user.userId);
       // console.log(results);
       res.json({ username: results[0].username });
     } else {
@@ -95,15 +95,23 @@ const getSession = function(req, res, next) {
 };
 
 const getProfile = (req, res) => {
-  console.log(req.params.id);
+  // console.log(req.params.id);
   const db = req.app.get("db");
   db.getprofile(+req.params.id).then(profile => res.status(200).json(profile));
 };
 
 const logout = (req, res) => {
-  console.log("LOGGED OUT");
+  // console.log("LOGGED OUT");
   req.session.destroy();
   res.sendStatus(200).json("logged out");
+};
+
+const editprofile = (req, res) => {
+  console.log("editing profile on the backend");
+  const db = req.app.get("db");
+  db.editprofile().then(nano_influencers =>
+    res.status(200).json(nano_influencers)
+  );
 };
 
 module.exports = {
@@ -112,5 +120,6 @@ module.exports = {
   getinfluencerprofiles,
   getSession,
   getProfile,
-  logout
+  logout,
+  editprofile
 };
