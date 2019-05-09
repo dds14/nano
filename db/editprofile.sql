@@ -1,2 +1,11 @@
-SELECT * 
-FROM nano_influencers
+UPDATE nano_influencers SET profilepicture = $1 WHERE id = $11;
+UPDATE nano_influencers SET atname = $2 WHERE id = $11;
+UPDATE nano_influencers SET followercount = $3 WHERE id = $11;
+UPDATE nano_influencers SET averagelikes = $4 WHERE id = $11;
+UPDATE nano_influencers SET averagecomments = $5 WHERE id = $11;
+UPDATE nano_influencers SET engagementrate = $6 WHERE id = $11;
+UPDATE nano_influencers SET priceperpost = $7 WHERE id = $11;
+UPDATE nano_influencers SET audiencebreakdown = $8 WHERE id = $11;
+UPDATE nano_influencers SET accountdescription = $9 WHERE id = $11;
+UPDATE nano_influencers SET email = $10 WHERE id = $11;
+-- SELECT * WHERE id = $11;

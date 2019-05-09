@@ -107,11 +107,33 @@ const logout = (req, res) => {
 };
 
 const editprofile = (req, res) => {
-  console.log("editing profile on the backend");
+  console.log("HIT!!");
+  const {
+    profilepicture,
+    atname,
+    followercount,
+    averagelikes,
+    averagecomments,
+    engagementrate,
+    priceperpost,
+    audiencebreakdown,
+    accountdescription,
+    email
+  } = req.body;
   const db = req.app.get("db");
-  db.editprofile().then(nano_influencers =>
-    res.status(200).json(nano_influencers)
-  );
+  db.editprofile(
+    profilepicture,
+    atname,
+    followercount,
+    averagelikes,
+    averagecomments,
+    engagementrate,
+    priceperpost,
+    audiencebreakdown,
+    accountdescription,
+    email,
+    req.session.user.userId
+  ).then(nano_influencers => res.status(200).json(nano_influencers));
 };
 
 module.exports = {

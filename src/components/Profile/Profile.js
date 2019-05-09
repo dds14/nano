@@ -9,29 +9,39 @@ export default class Profile extends Component {
 
     this.state = {
       profile: [],
-      email: "",
-      igaccountname: "",
-      atname: "",
       profilepicture: "",
-      accountdescription: "",
+      atname: "",
       followercount: "",
       averagelikes: "",
       averagecomments: "",
       engagementrate: "",
-      audiencebreakdown: "",
       priceperpost: "",
+      audiencebreakdown: "",
+      accountdescription: "",
+      email: "",
+      igaccountname: "",
       contactinfo: "",
       showEdit: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     axios.get(`/api/profile/${this.props.match.params.id}`).then(res => {
+      // console.log(res.data);
       this.setState({
         profile: res.data
       });
     });
+  }
+
+  handleChange(e) {
+    if (e.target.value != null) {
+      this.setState({ [e.target.name]: e.target.value });
+      // console.log(this.state.followercount);
+      // console.log("average comments: " + this.state.averagecomments);
+    }
   }
 
   // Edit Profile
@@ -40,7 +50,7 @@ export default class Profile extends Component {
     axios
       .put("/api/editprofile", {
         profilepicture: this.state.profilepicture,
-        igaccountname: this.state.atname,
+        atname: this.state.atname,
         followercount: this.state.followercount,
         averagelikes: this.state.averagelikes,
         averagecomments: this.state.averagecomments,
@@ -51,17 +61,16 @@ export default class Profile extends Component {
         email: this.state.email
       })
       .then(res => {
-        console.log("RES .then");
-        console.log(res.data);
-        // this.setState({
-        //   profile: res.data
-        // });
+        this.setState({
+          profile: res.data
+        });
       });
   }
 
   // This page will display the current users profile
   // Each part of their profile will be editable, which will manipulate the database
   render() {
+    // console.log(this.state.profile);
     return (
       <div>
         <Navbar />
@@ -138,7 +147,7 @@ export default class Profile extends Component {
                 placeholder="Followers"
                 onChange={this.handleChange}
                 value={this.state.followercount}
-                name="followers"
+                name="followercount"
               />
 
               <input
@@ -190,7 +199,7 @@ export default class Profile extends Component {
             </div>
           </div>
 
-          <button>Submit</button>
+          <button>Save Changes</button>
         </form>
       </div>
     );

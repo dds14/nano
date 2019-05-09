@@ -8,7 +8,7 @@ module.exports = {
       secure: false,
       auth: {
         user: "nanoapp3@gmail.com",
-        pass: "Coffee412!#"
+        pass: "Coffee223!#"
       }
     });
 
