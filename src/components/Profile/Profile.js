@@ -8,7 +8,19 @@ export default class Profile extends Component {
     super(props);
 
     this.state = {
-      profile: []
+      profile: [],
+      igaccountname: "",
+      atname: "",
+      profilepicture: "",
+      accountdescription: "",
+      followercount: "",
+      averagelikes: "",
+      averagecomments: "",
+      engagementrate: "",
+      audiencebreakdown: "",
+      priceperpost: "",
+      contactinfo: "",
+      showEdit: false
     };
   }
 
@@ -20,7 +32,32 @@ export default class Profile extends Component {
     });
   }
 
+  // Edit Profile
+  handleSubmit() {
+    axios
+      .put("/api/editprofile", {
+        igaccountname: this.state.igaccountname,
+        atname: this.state.atname,
+        profilepicture: this.state.profilepicture,
+        accountdescription: this.state.accountdescription,
+        followercount: this.state.followercount,
+        averagelikes: this.state.averagelikes,
+        averagecomments: this.state.averagecomments,
+        engagementrate: this.state.engagementrate,
+        audiencebreakdown: this.state.audiencebreakdown,
+        priceperpost: this.state.priceperpost,
+        contactinfo: this.state.contactinfo
+      })
+      .then(res => {
+        this.setState({
+          profile: res.data,
+          showEdit: false
+        });
+      });
+  }
+
   render() {
+    console.log(this.state.showEdit);
     // This page will display the current users profile
     // Each part of their profile will be editable, which will manipulate the database
     return (
@@ -31,7 +68,14 @@ export default class Profile extends Component {
             return (
               <div>
                 <div className="button-div">
-                  <button className="edit-profile-button">Edit Profile</button>
+                  <button
+                    className="edit-profile-button"
+                    onClick={() => {
+                      this.setState({ showEdit: true });
+                    }}
+                  >
+                    Edit Profile
+                  </button>
                 </div>
                 <div className="profile-picture-pp-div">
                   <img
@@ -71,6 +115,47 @@ export default class Profile extends Component {
             );
           })}
         </div>
+        {this.state.showEdit ? (
+          <form
+            onSubmit={this.handlesubmit}
+            autoComplete="off"
+            className="profile-form"
+          >
+            <label>Home Course</label>
+            <input
+              onChange={this.handleChange}
+              placeholder="course"
+              name="course"
+              value={this.state.course}
+              autoComplete="off"
+            />
+            <label> Handicap</label>
+            <input
+              onChange={this.handleChange}
+              name="handicap"
+              value={this.state.handicap}
+              type="number"
+              autoComplete="off"
+            />
+            <label>Rounds Per Year</label>
+            <input
+              value={this.state.rounds}
+              onChange={this.handleChange}
+              name="rounds"
+              type="number"
+              autoComplete="off"
+            />
+            <label>Career Hole in One</label>
+            <input
+              onChange={this.handleChange}
+              value={this.state.career}
+              name="career"
+              type="number"
+              autoComplete="off"
+            />
+            <button onClick={this.handleSubmit}>submit</button>
+          </form>
+        ) : null}
       </div>
     );
   }
