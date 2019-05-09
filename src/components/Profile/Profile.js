@@ -30,6 +30,9 @@ export default class Profile extends Component {
           {this.state.profile.map((val, index) => {
             return (
               <div>
+                <div className="button-div">
+                  <button className="edit-profile-button">Edit Profile</button>
+                </div>
                 <div className="profile-picture-pp-div">
                   <img
                     src={val.profilepicture}
@@ -61,12 +64,9 @@ export default class Profile extends Component {
                     <p>{"Bio: " + val.accountdescription}</p>
                   </div>
                 </div>
-                <div className="button-div">
-                  <button className="buy-post-button">
-                    {" "}
-                    <a href={"mailto:" + val.email}>Purchase A Post</a>
-                  </button>
-                </div>
+                {/* <div className="button-div">
+                  <button className="edit-profile-button">Edit Profile</button>
+                </div> */}
               </div>
             );
           })}
