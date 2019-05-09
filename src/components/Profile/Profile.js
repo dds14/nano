@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import { connect } from "react-redux";
-// import { getSession } from "";
-// import { Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+import "./Profile.scss";
 
 export default class Profile extends Component {
   constructor(props) {
@@ -22,22 +21,56 @@ export default class Profile extends Component {
   }
 
   render() {
-    console.log("state of the profile below");
-    console.log(this.state.profile);
-    // console.log(this.props);
     // This page will display the current users profile
     // Each part of their profile will be editable, which will manipulate the database
     return (
-      <div className="whole-div">
-        {this.state.profile.map((val, index) => {
-          return (
-            <div>
+      <div>
+        <Navbar />
+        <div className="entire-profile-page">
+          {this.state.profile.map((val, index) => {
+            return (
               <div>
-                <h1>{val.followercount}</h1>
+                <div className="profile-picture-pp-div">
+                  <img
+                    src={val.profilepicture}
+                    alt="profile-picture"
+                    className="profile-picture-pp"
+                  />
+                </div>
+                <div className="profile-account-name">
+                  <p>{val.igaccountname}</p>
+                </div>
+                <div className="all-profile-info">
+                  <div className="profile-left-side">
+                    <p>{"Followers: " + val.followercount}</p>
+                    <br />
+                    <p>{"Average Likes: " + val.averagelikes}</p>
+                    <br />
+                    <p>{"Average Comments: " + val.averagecomments}</p>
+                    <br />
+                    <p>{"Engagement Rate: " + val.engagementrate}</p>
+                    <br />
+                  </div>
+                  <div className="profile-right-side">
+                    <p>{"Description: " + val.followercount}</p>
+                    <br />
+                    <p>{"Price Per Post: " + val.priceperpost}</p>
+                    <br />
+                    <p>{"Audience Breakdown: " + val.audiencebreakdown}</p>
+                    <br />
+                    <p>{"Bio: " + val.accountdescription}</p>
+                  </div>
+                </div>
+                <div className="button-div">
+                  <button className="buy-post-button">
+                    {" "}
+                    <a href={"mailto:" + val.email}>Purchase A Post</a>
+                  </button>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     );
   }
