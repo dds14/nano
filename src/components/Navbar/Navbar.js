@@ -40,6 +40,7 @@ class Navbar extends Component {
         // LOGGED OUT NAVBAR
         <div className="navbar">
           <div className="hamburger">
+            <img src={logo} className="hammy-logo" alt="logo" />
             <img src={hamburger} className="hammy" alt="hamburger" />
           </div>
 

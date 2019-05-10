@@ -55,6 +55,13 @@ $nav-background: white;
   .nav-left-side {
     display: none;
   }
+  .hammy-logo {
+    height: 10vh;
+    min-width: 22vw;
+    position: absolute;
+    left: 1.5%;
+    top: 1.5%;
+  }
 }
 
 .nav-brands {
