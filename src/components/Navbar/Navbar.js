@@ -3,6 +3,7 @@ import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import logo from "../../Images/logo.png";
+import hamburger from "../../Images/hamburger.png";
 import { logout } from "../../ducks/auth";
 import { connect } from "react-redux";
 
@@ -34,11 +35,13 @@ class Navbar extends Component {
   }
 
   render() {
-    // console.log(this.props);
     if (this.state.id === null) {
       return (
         // LOGGED OUT NAVBAR
         <div className="navbar">
+          <div className="hamburger">
+            <img src={hamburger} className="hammy" alt="hamburger" />
+          </div>
           <div className="nav-left-side">
             <img src={logo} className="nav-logo" alt="logo" />
             <p className="nav-brands">Brands</p>

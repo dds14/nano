@@ -3,6 +3,22 @@
 // nav only
 $nav-background: white;
 
+// HAMBURGER
+
+.hamburger {
+  // border: 1px solid plum;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 25px;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .hamburger {
+    display: none;
+  }
+}
+
 .navbar {
   // border: $border-test-red;
   background-color: $nav-background;
@@ -30,6 +46,15 @@ $nav-background: white;
   display: flex;
   flex-direction: row;
   // justify-content: flex-end;
+}
+
+@media (max-width: 1200px) {
+  .nav-right-side {
+    display: none;
+  }
+  .nav-left-side {
+    display: none;
+  }
 }
 
 .nav-brands {
@@ -93,7 +118,7 @@ $nav-background: white;
   margin-top: 30px;
   padding-top: 12px;
   padding-bottom: 12px;
-  padding-right: 8px;
+  padding-right: 10px;
   padding-left: 15px;
   font-family: "Quicksand", sans-serif;
   letter-spacing: 2px;
