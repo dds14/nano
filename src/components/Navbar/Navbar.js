@@ -42,6 +42,7 @@ class Navbar extends Component {
           <div className="hamburger">
             <img src={hamburger} className="hammy" alt="hamburger" />
           </div>
+
           <div className="nav-left-side">
             <img src={logo} className="nav-logo" alt="logo" />
             <p className="nav-brands">Brands</p>
