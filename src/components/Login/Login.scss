@@ -1,13 +1,9 @@
 @import "../../variables.scss";
 
 .login {
-  // border: 1px solid red;
   width: 100%;
   height: 100vh;
   font-family: $font;
-  // background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBa6g2DpveG3XFs3-lP7Hn0OUoW3ZfWJm_L-9Grs5H3vGf1zzukA");
-  // background-image: url("https://images.unsplash.com/photo-1446001037989-e9dda9522338?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-  // background-image: url("https://images.unsplash.com/photo-1485468935663-831e33cf812d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
   background-image: url("../../Images/signup_background.png");
   opacity: 0.9;
   background-repeat: none;
@@ -40,18 +36,10 @@ input {
 
 input {
   display: inline-block;
-  //   float: right;
 }
-
-// input:focus {
-//   outline: none;
-//   border: 0.5px solid $accent;
-//   background-color: white;
-// }
 
 label {
   width: 100%;
-  // border: 1px solid red;
 }
 
 label {

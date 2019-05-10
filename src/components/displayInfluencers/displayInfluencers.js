@@ -28,11 +28,13 @@ export default class DisplayInfluencers extends Component {
             return (
               <div className="overall-account-display">
                 <div className="home-account-name">{val.igaccountname}</div>
-                <img
-                  src={val.profilepicture}
-                  alt="influencer-profile-picture"
-                  className="home-profile-picture"
-                />
+                <div className="image-div">
+                  <img
+                    src={val.profilepicture}
+                    alt="influencer-profile-picture"
+                    className="home-profile-picture"
+                  />
+                </div>
                 <div className="home-account-atname">
                   {"Username: " + val.atname}
                 </div>

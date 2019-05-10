@@ -40,8 +40,53 @@
 }
 
 .home-profile-picture {
+  min-height: 50vh;
+  max-height: 50vh;
+  min-width: 25vw;
+  max-width: 25vw;
   border-radius: 35px;
-  width: 24vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .home-influencers-title {
+    font-size: 40px;
+  }
+
+  .image-div {
+    width: 100%;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-profile-picture {
+    min-width: 80vw;
+    max-width: 80vw;
+    min-height: 70vh;
+    max-height: 70vh;
+    display: flex;
+    border: 3px solid salmon;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .whole-div {
+    border: 2px solid wheat;
+    width: 90%;
+    height: 100%;
+    padding-top: 45px;
+  }
+
+  .overall-account-display {
+    border: 1px solid greenyellow;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .home-account-atname {
