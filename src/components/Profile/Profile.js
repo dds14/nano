@@ -29,7 +29,6 @@ export default class Profile extends Component {
 
   componentDidMount() {
     axios.get(`/api/profile/${this.props.match.params.id}`).then(res => {
-      // console.log(res.data);
       this.setState({
         profile: res.data
       });
@@ -37,11 +36,9 @@ export default class Profile extends Component {
   }
 
   handleChange(e) {
-    if (e.target.value != null) {
-      this.setState({ [e.target.name]: e.target.value });
-      // console.log(this.state.followercount);
-      // console.log("average comments: " + this.state.averagecomments);
-    }
+    this.setState({ [e.target.name]: e.target.value });
+    // console.log(this.state.followercount);
+    // console.log("average comments: " + this.state.averagecomments);
   }
 
   // Edit Profile
@@ -70,7 +67,9 @@ export default class Profile extends Component {
   // This page will display the current users profile
   // Each part of their profile will be editable, which will manipulate the database
   render() {
-    // console.log(this.state.profile);
+    console.log("helloooo");
+    console.log(this.state.profile);
+    console.log("this.state.profile");
     return (
       <div>
         <Navbar />
@@ -129,6 +128,7 @@ export default class Profile extends Component {
           onSubmit={this.handleSubmit}
         >
           <h1>— Edit Profile —</h1>
+          {/* <h1>{this.state.profile[0].followercount}</h1> */}
           <div>
             <div>
               <input
@@ -146,7 +146,7 @@ export default class Profile extends Component {
               <input
                 placeholder="Followers"
                 onChange={this.handleChange}
-                value={this.state.followercount}
+                value={this.state.profile.followercount}
                 name="followercount"
               />
 

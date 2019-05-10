@@ -73,9 +73,9 @@ export class Signup extends Component {
           <img src={logo} className="signup-logo" alt="logo" />
 
           <h1 className="signup-header">— Sign Up —</h1>
+          <p className="signup-nano-header">Become An Influencer</p>
           <div className="signup-both-sides">
             <div className="signup-left-side">
-              <h4 className="signup-nano-header">Become An Influencer</h4>
               <input
                 className="signup-username-input"
                 placeholder="Nano Username"

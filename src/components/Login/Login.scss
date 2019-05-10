@@ -43,11 +43,11 @@ input {
   //   float: right;
 }
 
-input:focus {
-  outline: none;
-  border: 0.5px solid $accent;
-  background-color: white;
-}
+// input:focus {
+//   outline: none;
+//   border: 0.5px solid $accent;
+//   background-color: white;
+// }
 
 label {
   width: 100%;
@@ -124,4 +124,5 @@ label {
 
 .login-form-submit-button:focus {
   outline: none;
+  border: 1px solid red;
 }

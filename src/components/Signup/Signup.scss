@@ -23,12 +23,17 @@
   color: $accent;
   margin-bottom: 12px;
   width: 100%;
-  // border: 1px solid red;
+  display: flex;
   justify-content: center;
+}
 
-  // background: -webkit-linear-gradient(left, #37fdfc, #f0b5eb);
-  // background-clip: text;
-  // -webkit-text-fill-color: transparent;
+.signup-nano-header {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  font-size: 17px;
 }
 
 input {
@@ -50,7 +55,7 @@ label {
 
 input:focus {
   outline: none;
-  border: 0.5px solid $accent;
+  border: 1px solid $accent;
   background-color: white;
 }
 
@@ -61,7 +66,7 @@ input:focus {
 
 @media only screen and (max-width: 800px) {
   .signup-logo {
-    margin-top: 450px;
+    margin-top: 480px;
   }
 }
 
@@ -137,7 +142,7 @@ input:focus {
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 45px;
-  margin-top: 10px;
+  margin-top: 12px;
   margin-bottom: 40px;
   // margin-left: 12px;
   font-family: $font;

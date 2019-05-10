@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Contact.scss";
 import { Redirect } from "react-router-dom";
+import logo from "../../Images/logo.png";
 
 export default class Contact extends Component {
   constructor(props) {
@@ -42,13 +43,14 @@ export default class Contact extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <div>
-        <h1>Contact Us</h1>
+      <div className="contact">
         <form
           autocomplete="off"
           className="contact-form"
           onSubmit={this.handleSubmit}
         >
+          <img src={logo} className="contact-logo" alt="logo" />
+          <h1 className="contact-header">— Contact Us —</h1>
           <input
             className="contact-first-name-input"
             placeholder="First Name"

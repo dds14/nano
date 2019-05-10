@@ -16,3 +16,76 @@ textarea:focus {
   border: 0.5px solid $accent;
   background-color: white;
 }
+
+.contact {
+  width: 100%;
+  height: 100vh;
+  font-family: $font;
+  background-image: url("../../Images/signup_background.png");
+  opacity: 0.9;
+  background-repeat: none;
+  background-size: cover;
+}
+
+.contact-header {
+  font-size: 32px;
+  color: $accent;
+  margin-bottom: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.contact-form {
+  display: flex;
+  background-color: white;
+  width: 30%;
+  height: 90%;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 800px) {
+  .contact-form {
+    height: 95%;
+    width: 75%;
+  }
+}
+
+.contact-logo {
+  margin-bottom: 20px;
+  width: 30%;
+}
+
+.contact-first-name-input {
+  margin-top: 15px;
+}
+
+.contact-last-name-input {
+  margin-top: 15px;
+}
+
+.contact-email-input {
+  margin-top: 15px;
+}
+
+.contact-message-input {
+  margin-top: 15px;
+}
+
+.contact-form-submit-button {
+  background-color: $accent;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 45px;
+  margin-top: 24px;
+  font-family: $font;
+  font-size: 14px;
+}
