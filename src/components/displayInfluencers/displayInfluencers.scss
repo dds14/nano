@@ -56,36 +56,37 @@
   }
 
   .image-div {
+    // border: 1px solid blue;
     width: 100%;
-    border: 1px solid blue;
     display: flex;
     justify-content: center;
   }
 
   .home-profile-picture {
+    // border: 3px solid salmon;
     min-width: 80vw;
     max-width: 80vw;
     min-height: 70vh;
     max-height: 70vh;
     display: flex;
-    border: 3px solid salmon;
     justify-content: center;
     align-content: center;
   }
 
   .whole-div {
-    border: 2px solid wheat;
+    // border: 2px solid wheat;
     width: 90%;
     height: 100%;
     padding-top: 45px;
   }
 
   .overall-account-display {
-    border: 1px solid greenyellow;
+    // border: 1px solid greenyellow;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 12px;
   }
 }
 
