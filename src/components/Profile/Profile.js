@@ -37,8 +37,6 @@ export default class Profile extends Component {
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
-    // console.log(this.state.followercount);
-    // console.log("average comments: " + this.state.averagecomments);
   }
 
   // Edit Profile
@@ -78,14 +76,16 @@ export default class Profile extends Component {
             return (
               <div>
                 <div className="button-div">
+                  {/* Edit Profile Button */}
                   <button
                     className="edit-profile-button"
                     onClick={() => {
-                      this.setState({ showEdit: true });
+                      this.setState({ showEdit: !this.state.showEdit });
                     }}
                   >
                     Edit Profile
                   </button>
+                  {/* Edit Profile Button */}
                 </div>
                 <div className="profile-picture-pp-div">
                   <img
@@ -122,85 +122,91 @@ export default class Profile extends Component {
             );
           })}
         </div>
-        <form
-          autocomplete="off"
-          className="edit-profile-form"
-          onSubmit={this.handleSubmit}
-        >
-          <h1>— Edit Profile —</h1>
-          {/* <h1>{this.state.profile[0].followercount}</h1> */}
-          <div>
-            <div>
-              <input
-                placeholder="Profile Picture (link)"
-                onChange={this.handleChange}
-                value={this.state.profilepicture}
-                name="profilepicture"
-              />
-              <input
-                placeholder="IG Username"
-                onChange={this.handleChange}
-                value={this.state.atname}
-                name="atname"
-              />
-              <input
-                placeholder="Followers"
-                onChange={this.handleChange}
-                value={this.state.profile.followercount}
-                name="followercount"
-              />
+        {/* Edit Profile Form - only shown when 'Edit Profile' button is clicked */}
+        {/* FORM DIV START */}
+        <div>
+          {this.state.showEdit === true ? (
+            <form
+              autocomplete="off"
+              className="edit-profile-form"
+              onSubmit={this.handleSubmit}
+            >
+              <h1>— Edit Profile —</h1>
+              <div>
+                <div>
+                  <input
+                    placeholder="Profile Picture (link)"
+                    onChange={this.handleChange}
+                    value={this.state.profilepicture}
+                    name="profilepicture"
+                  />
+                  <input
+                    placeholder="IG Username"
+                    onChange={this.handleChange}
+                    value={this.state.atname}
+                    name="atname"
+                  />
+                  <input
+                    placeholder="Followers"
+                    onChange={this.handleChange}
+                    value={this.state.profile.followercount}
+                    name="followercount"
+                  />
 
-              <input
-                placeholder="Average Likes"
-                onChange={this.handleChange}
-                value={this.state.averagelikes}
-                name="averagelikes"
-              />
+                  <input
+                    placeholder="Average Likes"
+                    onChange={this.handleChange}
+                    value={this.state.averagelikes}
+                    name="averagelikes"
+                  />
 
-              <input
-                placeholder="Average Comments"
-                onChange={this.handleChange}
-                value={this.state.averagecomments}
-                name="averagecomments"
-              />
-            </div>
-            {/* HALFWAY POINT */}
-            <div>
-              <input
-                placeholder="Engagement Rate"
-                onChange={this.handleChange}
-                value={this.state.engagementrate}
-                name="engagementrate"
-              />
-              <input
-                placeholder="Price Per Post"
-                onChange={this.handleChange}
-                value={this.state.priceperpost}
-                name="priceperpost"
-              />
-              <input
-                placeholder="Audience Breakdown"
-                onChange={this.handleChange}
-                value={this.state.audiencebreakdown}
-                name="audiencebreakdown"
-              />
-              <input
-                placeholder="Bio"
-                onChange={this.handleChange}
-                value={this.state.accountdescription}
-                name="accountdescription"
-              />
-              <input
-                placeholder="Email Address"
-                onChange={this.handleChange}
-                value={this.state.email}
-                name="email"
-              />
-            </div>
-          </div>
+                  <input
+                    placeholder="Average Comments"
+                    onChange={this.handleChange}
+                    value={this.state.averagecomments}
+                    name="averagecomments"
+                  />
+                </div>
+                {/* HALFWAY POINT */}
+                <div>
+                  <input
+                    placeholder="Engagement Rate"
+                    onChange={this.handleChange}
+                    value={this.state.engagementrate}
+                    name="engagementrate"
+                  />
+                  <input
+                    placeholder="Price Per Post"
+                    onChange={this.handleChange}
+                    value={this.state.priceperpost}
+                    name="priceperpost"
+                  />
+                  <input
+                    placeholder="Audience Breakdown"
+                    onChange={this.handleChange}
+                    value={this.state.audiencebreakdown}
+                    name="audiencebreakdown"
+                  />
+                  <input
+                    placeholder="Bio"
+                    onChange={this.handleChange}
+                    value={this.state.accountdescription}
+                    name="accountdescription"
+                  />
+                  <input
+                    placeholder="Email Address"
+                    onChange={this.handleChange}
+                    value={this.state.email}
+                    name="email"
+                  />
+                </div>
+              </div>
+              <button>Save Changes</button>
+            </form>
+          ) : null}
+        </div>
 
-          <button>Save Changes</button>
-        </form>
+        {/* FORM DIV END */}
       </div>
     );
   }
