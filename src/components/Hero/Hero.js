@@ -12,8 +12,26 @@ export default class Hero extends Component {
         <div className="home-left">
           <div className="home-header">
             <span className="hero-span">
+              {/* BOX ANIMATION START */}
+              {/* <div className="box">
+                <div className="coin" />
+              </div> */}
+              {/* BOX ANIMATION END */}
+              {/* BALLS ANIMATION START */}
+              <div className="balls-div">
+                <div class="balls">
+                  <div />
+                  <div />
+                  <div />
+                </div>
+              </div>
+              {/* BALLS ANIMATION END */}
+
               <h1 className="home-nano">Nano</h1>
             </span>
+            {/* <div class="box">
+              <div class="coin" />
+            </div> */}
             <br />
             <h3 className="home-tagline">Influencer Marketing Made Easy</h3>
           </div>
