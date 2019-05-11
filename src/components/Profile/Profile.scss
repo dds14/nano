@@ -4,6 +4,26 @@
   font-family: "Quicksand", sans-serif;
 }
 
+.edit-profile-container {
+  width: 100%;
+  height: 100vh;
+  font-family: $font;
+  // background-image: url("../../Images/signup_background.png");
+  background-image: url("https://images.unsplash.com/photo-1533421455827-883c3a23c031?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+  // opacity: 0.9;
+  background-repeat: none;
+  background-size: cover;
+}
+
+.edit-profile-header {
+  // border: 1px solid red;
+  font-size: 32px;
+  color: $accent;
+  margin-bottom: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
 .profile-picture-pp-div {
   //   border: 1px solid red;
   display: flex;
@@ -60,6 +80,7 @@
 
 .edit-profile-button {
   position: absolute;
+  z-index: 1;
   top: 20%;
   left: 3%;
   font-size: 16px;
@@ -90,6 +111,7 @@
 
 .edit-profile-form {
   display: flex;
+  z-index: 0;
   background-color: white;
   height: 80vh;
   width: 30%;
@@ -102,6 +124,39 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 800px) {
+  .edit-profile-form {
+    height: 75%;
+    width: 75%;
+  }
+  .edit-profile-button {
+    left: 30%;
+    top: 15%;
+  }
+}
+
+.edit-profile-submit-button {
+  // border: 1px solid blue;
+  background-color: $accent;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 45px;
+  margin-top: 10px;
+  position: relative;
+  font-family: $font;
+  font-size: 14px;
+}
+
+.edit-profile-submit-button:hover {
+  opacity: 0.5;
+}
+
+.edit-profile-submit-button:focus {
+  outline: none;
 }
 
 form {

@@ -84,25 +84,13 @@ export default class Profile extends Component {
         {/* FORM DIV START */}
         <div>
           {this.state.showEdit === true ? (
-            <form
-              autocomplete="off"
-              className="edit-profile-form"
-              onSubmit={this.handleSubmit}
-            >
-              <h1>— Edit Profile —</h1>
-              {/* Edit Profile Button START */}
-              {/* <div className="button-div"> */}
-              {/* <button
-                className="edit-profile-button"
-                onClick={() => {
-                  this.setState({ showEdit: !this.state.showEdit });
-                }}
+            <div className="edit-profile-container">
+              <form
+                autocomplete="off"
+                className="edit-profile-form"
+                onSubmit={this.handleSubmit}
               >
-                Edit Profile
-              </button> */}
-              {/* </div> */}
-              {/* Edit Profile Button END */}
-              <div>
+                <h1 className="edit-profile-header">— Edit Profile —</h1>
                 <div>
                   <input
                     placeholder="Profile Picture (link)"
@@ -129,16 +117,14 @@ export default class Profile extends Component {
                     value={this.state.averagelikes}
                     name="averagelikes"
                   />
-
                   <input
                     placeholder="Average Comments"
                     onChange={this.handleChange}
                     value={this.state.averagecomments}
                     name="averagecomments"
                   />
-                </div>
-                {/* HALFWAY POINT */}
-                <div>
+
+                  {/* HALFWAY POINT */}
                   <input
                     placeholder="Engagement Rate"
                     onChange={this.handleChange}
@@ -170,26 +156,16 @@ export default class Profile extends Component {
                     name="email"
                   />
                 </div>
-              </div>
-              <button>Save Changes</button>
-            </form>
+                <button className="edit-profile-submit-button">
+                  Save Changes
+                </button>
+              </form>
+            </div>
           ) : (
             <div className="entire-profile-page">
               {this.state.profile.map((val, index) => {
                 return (
                   <div>
-                    {/* Edit Profile Button START */}
-                    {/* <div className="button-div">
-                      <button
-                        className="edit-profile-button"
-                        onClick={() => {
-                          this.setState({ showEdit: !this.state.showEdit });
-                        }}
-                      >
-                        Edit Profile
-                      </button>
-                    </div> */}
-                    {/* Edit Profile Button END */}
                     <div className="profile-picture-pp-div">
                       <img
                         src={val.profilepicture}
