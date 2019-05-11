@@ -71,57 +71,15 @@ export default class Profile extends Component {
     return (
       <div>
         <Navbar />
-        <div className="entire-profile-page">
-          {this.state.profile.map((val, index) => {
-            return (
-              <div>
-                <div className="button-div">
-                  {/* Edit Profile Button */}
-                  <button
-                    className="edit-profile-button"
-                    onClick={() => {
-                      this.setState({ showEdit: !this.state.showEdit });
-                    }}
-                  >
-                    Edit Profile
-                  </button>
-                  {/* Edit Profile Button */}
-                </div>
-                <div className="profile-picture-pp-div">
-                  <img
-                    src={val.profilepicture}
-                    alt="profile-picture"
-                    className="profile-picture-pp"
-                  />
-                </div>
-                <div className="profile-account-name">
-                  <p>{val.igaccountname}</p>
-                </div>
-                <div className="all-profile-info">
-                  <div className="profile-left-side">
-                    <p>{"IG Username: " + val.atname}</p>
-                    <br />
-                    <p>{"Followers: " + val.followercount}</p>
-                    <br />
-                    <p>{"Average Likes: " + val.averagelikes}</p>
-                    <br />
-                    <p>{"Average Comments: " + val.averagecomments}</p>
-                    <br />
-                  </div>
-                  <div className="profile-right-side">
-                    <p>{"Engagement Rate: " + val.engagementrate}</p>
-                    <br />
-                    <p>{"Price Per Post: " + val.priceperpost}</p>
-                    <br />
-                    <p>{"Audience Breakdown: " + val.audiencebreakdown}</p>
-                    <br />
-                    <p>{"Bio: " + val.accountdescription}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <button
+          className="edit-profile-button"
+          onClick={() => {
+            this.setState({ showEdit: !this.state.showEdit });
+          }}
+        >
+          Edit Profile
+        </button>
+
         {/* Edit Profile Form - only shown when 'Edit Profile' button is clicked */}
         {/* FORM DIV START */}
         <div>
@@ -132,6 +90,18 @@ export default class Profile extends Component {
               onSubmit={this.handleSubmit}
             >
               <h1>— Edit Profile —</h1>
+              {/* Edit Profile Button START */}
+              {/* <div className="button-div"> */}
+              {/* <button
+                className="edit-profile-button"
+                onClick={() => {
+                  this.setState({ showEdit: !this.state.showEdit });
+                }}
+              >
+                Edit Profile
+              </button> */}
+              {/* </div> */}
+              {/* Edit Profile Button END */}
               <div>
                 <div>
                   <input
@@ -203,7 +173,59 @@ export default class Profile extends Component {
               </div>
               <button>Save Changes</button>
             </form>
-          ) : null}
+          ) : (
+            <div className="entire-profile-page">
+              {this.state.profile.map((val, index) => {
+                return (
+                  <div>
+                    {/* Edit Profile Button START */}
+                    {/* <div className="button-div">
+                      <button
+                        className="edit-profile-button"
+                        onClick={() => {
+                          this.setState({ showEdit: !this.state.showEdit });
+                        }}
+                      >
+                        Edit Profile
+                      </button>
+                    </div> */}
+                    {/* Edit Profile Button END */}
+                    <div className="profile-picture-pp-div">
+                      <img
+                        src={val.profilepicture}
+                        alt="profile-picture"
+                        className="profile-picture-pp"
+                      />
+                    </div>
+                    <div className="profile-account-name">
+                      <p>{val.igaccountname}</p>
+                    </div>
+                    <div className="all-profile-info">
+                      <div className="profile-left-side">
+                        <p>{"IG Username: " + val.atname}</p>
+                        <br />
+                        <p>{"Followers: " + val.followercount}</p>
+                        <br />
+                        <p>{"Average Likes: " + val.averagelikes}</p>
+                        <br />
+                        <p>{"Average Comments: " + val.averagecomments}</p>
+                        <br />
+                      </div>
+                      <div className="profile-right-side">
+                        <p>{"Engagement Rate: " + val.engagementrate}</p>
+                        <br />
+                        <p>{"Price Per Post: " + val.priceperpost}</p>
+                        <br />
+                        <p>{"Audience Breakdown: " + val.audiencebreakdown}</p>
+                        <br />
+                        <p>{"Bio: " + val.accountdescription}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* FORM DIV END */}
