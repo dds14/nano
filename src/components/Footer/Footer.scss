@@ -1,0 +1,31 @@
+@import "../../variables.scss";
+
+.footer {
+  font-family: $font;
+  background: $accent;
+  display: flex;
+  justify-content: space-between;
+  height: 30vh;
+  width: 100%;
+}
+
+.footer-left {
+  border: 1px solid red;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-middle {
+  border: 1px solid red;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-right {
+  border: 1px solid red;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
