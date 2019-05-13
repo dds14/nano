@@ -2,6 +2,7 @@
 
 .entire-profile-page {
   font-family: "Quicksand", sans-serif;
+  margin-bottom: 7%;
 }
 
 .edit-profile-container {
@@ -35,6 +36,8 @@
 
 .profile-picture-pp {
   border-radius: 10px;
+  max-width: 50vw;
+  max-height: 50vh;
 }
 
 .profile-account-name {

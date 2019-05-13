@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import "./Profile.scss";
 
 export default class Profile extends Component {
@@ -79,7 +80,6 @@ export default class Profile extends Component {
         >
           Edit Profile
         </button>
-
         {/* Edit Profile Form - only shown when 'Edit Profile' button is clicked */}
         {/* FORM DIV START */}
         <div>
@@ -203,8 +203,8 @@ export default class Profile extends Component {
             </div>
           )}
         </div>
-
         {/* FORM DIV END */}
+        <Footer />
       </div>
     );
   }

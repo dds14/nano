@@ -69,7 +69,9 @@ class Navbar extends Component {
         // LOGGED IN NAVBAR
         <div className="navbar">
           <div className="nav-left-side">
-            <img src={logo} className="nav-logo" alt="logo" />
+            <Link to="/">
+              <img src={logo} className="nav-logo" alt="logo" />
+            </Link>
             <p className="nav-brands">Brands</p>
             <Link to="/contact" className="nav-influencer">
               Contact Us
