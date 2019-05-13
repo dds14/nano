@@ -43,10 +43,6 @@ app.use(
   })
 );
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
-});
-
 // Login Authentication
 app.post("/auth/signup", signup);
 app.post("/auth/login", login);
@@ -69,6 +65,9 @@ app.get("/auth/logout", logout);
 // Edit Profile
 app.put("/api/editprofile", editprofile);
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 app.listen(SERVER_PORT, () => {
   console.log(`Server listening on ${SERVER_PORT}`);
 });
