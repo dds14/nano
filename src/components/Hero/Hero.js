@@ -43,7 +43,7 @@ export default class Hero extends Component {
         <div className="home-right">
           <img
             className="girl1"
-            src="https://images.unsplash.com/photo-1524508368610-eec9c872de62?ixlib=rb-1.2.1&auto=format&fit=crop&w=2800&q=80"
+            src="https://images.unsplash.com/photo-1530131272429-0ad33e79aeb8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
             alt="logo"
           />
         </div>
