@@ -2,14 +2,13 @@
 
 .footer {
   font-family: $font;
-  //   background: #2d3e50;
-  //   background: #4d4e4f;
   background: #414a4c;
   color: white;
   display: flex;
   justify-content: space-between;
   height: 38vh;
   width: 100%;
+  padding-bottom: 30px;
 }
 
 .footer-left {
@@ -47,10 +46,11 @@
 }
 
 .footer-middle {
-  //   border: 1px solid red;
+  border: 1px solid red;
   width: 33%;
   display: flex;
-  justify-content: center;
+  position: relative;
+  flex-direction: column;
 }
 
 .footer-right {
@@ -106,4 +106,42 @@
 
 .twitter-word {
   margin-left: 2%;
+}
+
+// FORM DESIGN
+
+.footer-form {
+  width: 63%;
+  display: flex;
+  //   justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.footer-form-div {
+  //   border: 1px solid slateblue;
+  margin-top: 3%;
+  position: relative;
+  left: 8%;
+}
+
+.footer-name-input,
+.footer-email-input,
+.footer-phone-input,
+.footer-message-input {
+  background-color: rgba(55, 253, 252, 0.9);
+  border-radius: 3px;
+  color: white;
+  //   background: transparent;
+}
+
+.footer-name-input::placeholder,
+.footer-email-input::placeholder,
+.footer-phone-input::placeholder,
+.footer-message-input::placeholder {
+  color: white;
+}
+
+.footer-form-submit-button {
+  width: 30%;
 }

@@ -26,7 +26,29 @@ export default class Footer extends Component {
           </div>
           <p className="copyright">Copyright © 2019 Nano App Inc.</p>
         </div>
-        {/* <div className="footer-middle" /> */}
+        <div className="footer-middle">
+          <h2 className="footer-left-header">Say Hello</h2>
+          <div className="footer-form-div">
+            <form autoComplete="off" className="footer-form">
+              <input
+                className="footer-name-input"
+                placeholder="Name"
+                name="name"
+              />
+              <input
+                className="footer-email-input"
+                placeholder="Email"
+                name="email"
+              />
+              <input
+                className="footer-phone-input"
+                placeholder="Phone"
+                name="phone"
+              />
+              <button className="footer-form-submit-button">Submit</button>
+            </form>
+          </div>
+        </div>
         <div className="footer-right">
           <h2 className="footer-left-header">Keep Connected</h2>
           <div className="footer-left-content">

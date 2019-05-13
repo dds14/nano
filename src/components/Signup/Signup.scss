@@ -166,7 +166,6 @@ input:focus {
 
 label {
   display: inline-block;
-  //   float: left;
   clear: left;
   width: 225px;
   align-items: center;
@@ -177,15 +176,11 @@ label {
 
 input {
   display: inline-block;
-  //   float: right;
 }
 
 .signup-checkboxes {
   display: flex;
   flex-direction: row;
-  // justify-content: space-around;
-  // border: 3px solid red;
-  // width: 25vw;
 }
 
 .signup-brand-input-label {
