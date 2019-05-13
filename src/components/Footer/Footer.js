@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import fb_icon from "../../Images/fb_icon.png";
 import ig_icon from "../../Images/ig_icon.png";
 import twitter_icon from "../../Images/twitter_icon.png";
+import logo from "../../Images/logo.png";
 
 import "./Footer.scss";
 
@@ -13,23 +14,14 @@ export default class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        <div className="footer-left">
-          <h2 className="footer-left-header">Get in Touch</h2>
-          <div className="footer-left-content">
-            <p className="footer-left-paragraph">+1 (212) 825-3953</p>
-            <br />
-            <p className="footer-left-paragraph">hello@nanoapp.com</p>
-            <br />
-            <p className="footer-left-paragraph">
-              145 2nd Ave, New York, NY 10021
-            </p>
-          </div>
-          <p className="copyright">Copyright © 2019 Nano App Inc.</p>
-        </div>
-        {/* <div className="footer-middle">
-          <h2 className="footer-left-header">Say Hello</h2>
+        {/* <h2 className="footer-left-header">Say Hello</h2> */}
+        <div className="footer-middle">
           <div className="footer-form-div">
-            <form autoComplete="off" className="footer-form">
+            <div className="logo-footer">
+              <img src={logo} className="footer-logo" alt="nano-logo" />
+            </div>
+            <p className="copyright">Copyright © 2019 Nano App Inc.</p>
+            {/* <form autoComplete="off" className="footer-form">
               <input
                 className="footer-name-input"
                 placeholder="Name"
@@ -46,9 +38,22 @@ export default class Footer extends Component {
                 name="phone"
               />
               <button className="footer-form-submit-button">Submit</button>
-            </form>
+            </form> */}
           </div>
-        </div> */}
+        </div>
+        <div className="footer-left">
+          <h2 className="footer-left-header">Get in Touch</h2>
+          <div className="footer-left-content">
+            <p className="footer-left-paragraph">+1 (212) 825-3953</p>
+            <br />
+            <p className="footer-left-paragraph">hello@nanoapp.com</p>
+            <br />
+            <p className="footer-left-paragraph">
+              145 2nd Ave, New York, NY 10021
+            </p>
+          </div>
+          {/* <p className="copyright">Copyright © 2019 Nano App Inc.</p> */}
+        </div>
         <div className="footer-right">
           <h2 className="footer-left-header">Keep Connected</h2>
           <div className="footer-left-content">
