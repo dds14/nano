@@ -1,0 +1,107 @@
+@import "../../variables.scss";
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.hero-under {
+  border-bottom: 1px solid $accent;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  font-family: $font;
+}
+
+.hero-under-right {
+  // border: $border-test-blue;
+  width: 50%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.under-right {
+  border: 1px solid orangered;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-under-right {
+  width: 100%;
+  height: 90vh;
+}
+
+.under-header {
+  //   border: 1px solid orangered;
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.under-find {
+  border: 2px solid green;
+}
+
+@media only screen and (max-width: 800px) {
+  .home-right {
+    display: none;
+  }
+
+  .home-left {
+    // border: 1px solid red;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+  }
+}
+
+.under1 {
+  width: 100%;
+  height: 90vh;
+  opacity: 0.9;
+}
+
+.hero-button-1 {
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 90%;
+  border-radius: 45px;
+  background-color: $accent;
+  color: black;
+  font-size: 17px;
+  margin-top: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 35px;
+  padding-left: 35px;
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.hero-button-1:hover {
+  opacity: 0.5;
+  color: black;
+}
+
+.hero-button-1:focus {
+  outline: none;
+}
+
+button {
+  outline: none;
+}

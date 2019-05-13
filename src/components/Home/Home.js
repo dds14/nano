@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import DisplayInfluencers from "../displayInfluencers/displayInfluencers";
 import Footer from "../Footer/Footer";
+import Hero_Under from "../Hero_Under/Hero_Under";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <header className="App-header" />
       <Navbar />
       <Hero />
+      <Hero_Under />
       <DisplayInfluencers />
       <Footer />
     </div>
