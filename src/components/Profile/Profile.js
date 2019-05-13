@@ -30,8 +30,19 @@ export default class Profile extends Component {
 
   componentDidMount() {
     axios.get(`/api/profile/${this.props.match.params.id}`).then(res => {
+      console.log(res);
       this.setState({
-        profile: res.data
+        profile: res.data,
+        profilepicture: res.data[0].profilepicture,
+        atname: res.data[0].atname,
+        followercount: res.data[0].followercount,
+        averagelikes: res.data[0].averagelikes,
+        averagecomments: res.data[0].averagecomments,
+        engagementrate: res.data[0].engagementrate,
+        priceperpost: res.data[0].priceperpost,
+        audiencebreakdown: res.data[0].audiencebreakdown,
+        accountdescription: res.data[0].accountdescription,
+        email: res.data[0].email
       });
     });
   }
@@ -69,6 +80,8 @@ export default class Profile extends Component {
     console.log("helloooo");
     console.log(this.state.profile);
     console.log("this.state.profile");
+    console.log("PROFILE PICTURE: ", this.state.profilepicture);
+
     return (
       <div>
         <Navbar />
@@ -107,7 +120,7 @@ export default class Profile extends Component {
                   <input
                     placeholder="Followers"
                     onChange={this.handleChange}
-                    value={this.state.profile.followercount}
+                    value={this.state.followercount}
                     name="followercount"
                   />
 
@@ -204,7 +217,7 @@ export default class Profile extends Component {
           )}
         </div>
         {/* FORM DIV END */}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }
