@@ -26,7 +26,7 @@ export default class Footer extends Component {
           </div>
           <p className="copyright">Copyright © 2019 Nano App Inc.</p>
         </div>
-        <div className="footer-middle" />
+        {/* <div className="footer-middle" /> */}
         <div className="footer-right">
           <h2 className="footer-left-header">Keep Connected</h2>
           <div className="footer-left-content">
