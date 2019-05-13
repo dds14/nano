@@ -4,8 +4,11 @@ const express = require("express");
 const session = require("express-session");
 const nodemailer = require("nodemailer");
 const { SERVER_PORT, SESSION_SECRET } = process.env;
+const path = require("path"); // Usually moved to the start of file
 
 const app = express();
+
+app.use(express.static(`${__dirname}/../build`));
 
 app.use(express.json());
 const {
@@ -39,6 +42,10 @@ app.use(
     }
   })
 );
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 // Login Authentication
 app.post("/auth/signup", signup);
