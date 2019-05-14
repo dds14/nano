@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Hero.scss";
+import { Link } from "react-router-dom";
 
 export default class Hero extends Component {
   constructor(props) {
@@ -37,7 +38,9 @@ export default class Hero extends Component {
           </div>
 
           <div className="hero-buttons">
-            <button className="hero-button-1">Learn More</button>
+            <Link to="/learn">
+              <button className="hero-button-1">Learn More</button>
+            </Link>
           </div>
         </div>
         <div className="home-right">

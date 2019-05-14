@@ -48,8 +48,9 @@ class Navbar extends Component {
             <Link to="/">
               <img src={logo} className="nav-logo" alt="logo" />
             </Link>
-
-            <p className="nav-brands">Brands</p>
+            <Link to="/learn" className="nav-learn">
+              <p className="nav-brands">Learn</p>
+            </Link>
             <Link to="/contact" className="nav-influencer">
               Contact Us
             </Link>
@@ -72,7 +73,9 @@ class Navbar extends Component {
             <Link to="/">
               <img src={logo} className="nav-logo" alt="logo" />
             </Link>
-            <p className="nav-brands">Brands</p>
+            <Link to="/learn" className="nav-learn">
+              <p className="nav-brands">Learn</p>
+            </Link>
             <Link to="/contact" className="nav-influencer">
               Contact Us
             </Link>

@@ -5,6 +5,7 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Contact from "./components/Contact/Contact";
 import Profile from "./components/Profile/Profile";
+import Learn from "./components/Learn/Learn";
 import influencerDashboard from "./components/Dashboards/influencerDashboard/influencerDashboard";
 
 export default (
@@ -14,6 +15,7 @@ export default (
     <Route path="/login" component={Login} />
     <Route path="/contact" component={Contact} />
     <Route path="/profile/:id" component={Profile} />
+    <Route path="/learn" component={Learn} />
     <Route exact path="/" component={Home} />
   </Switch>
 );

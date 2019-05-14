@@ -46,7 +46,7 @@ a {
 }
 
 .under-icons {
-  border: 2px solid greenyellow;
+  // border: 2px solid greenyellow;
   width: 100%;
   height: 75%;
   display: flex;
@@ -79,6 +79,8 @@ a {
 
 .img-div {
   // border: 1px solid red;
+  margin-right: 5%;
+  margin-top: 2%;
   width: 30%;
   display: flex;
   justify-content: flex-end;
