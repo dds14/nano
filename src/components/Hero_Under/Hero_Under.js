@@ -17,9 +17,10 @@ export default class Hero extends Component {
           <img
             className="under1"
             src={logo}
-            src="
-            https://images.unsplash.com/photo-1550725650-c258d72de212?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60
-            "
+            // src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6aa8bd73750985.5c18084ed4c95.jpg"
+            src="https://images.unsplash.com/photo-1518144591331-17a5dd71c477?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+            // "https://images.unsplash.com/photo-1502809701328-25d749719304?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+            // "https://images.unsplash.com/photo-1550725650-c258d72de212?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
             alt="logo"
           />
         </div>
