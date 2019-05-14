@@ -38,8 +38,15 @@ a {
   margin-bottom: 3%;
 }
 
-.under-icons {
+.discover-content {
   // border: 2px solid greenyellow;
+  width: 100%;
+  height: 75%;
+  display: flex;
+}
+
+.under-icons {
+  border: 2px solid greenyellow;
   width: 100%;
   height: 75%;
   display: flex;
@@ -56,13 +63,37 @@ a {
 .discover-icon-div {
   // border: 1px solid red;
   display: flex;
-  width: 60%;
+  width: 65%;
   flex-direction: row;
   align-items: center;
+  // justify-content: center;
   font-size: 24px;
   margin-bottom: 7%;
 }
 
+.discover-image {
+  width: 6vw;
+  height: 9vh;
+  margin-right: 5%;
+}
+
+.img-div {
+  // border: 1px solid red;
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-image {
+  width: 6vw;
+  height: 9vh;
+  margin-right: 10%;
+}
+.pay-image {
+  width: 6vw;
+  height: 9vh;
+  margin-right: 8%;
+}
 .discover-image {
   width: 6vw;
   height: 9vh;

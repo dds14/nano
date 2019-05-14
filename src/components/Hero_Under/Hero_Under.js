@@ -31,11 +31,13 @@ export default class Hero extends Component {
           </div>
           <div className="under-icons">
             <div className="discover-icon-div">
-              <img
-                src={discover_icon}
-                className="discover-image"
-                alt="discover"
-              />
+              <div className="img-div">
+                <img
+                  src={discover_icon}
+                  className="discover-image"
+                  alt="discover"
+                />
+              </div>
               <div className="discover-content">
                 <p className="discover-header">Discover</p>
                 <p className="discover-blurb">
@@ -45,11 +47,13 @@ export default class Hero extends Component {
             </div>
             {/* SECOND DIV STARTS (COMMUNICATE) */}
             <div className="discover-icon-div">
-              <img
-                src={communicate_icon}
-                className="discover-image"
-                alt="discover"
-              />
+              <div className="img-div">
+                <img
+                  src={communicate_icon}
+                  className="contact-image"
+                  alt="discover"
+                />
+              </div>
               <div className="discover-content">
                 <p className="discover-header">Contact</p>
                 <p className="discover-blurb">
@@ -59,7 +63,9 @@ export default class Hero extends Component {
             </div>
             {/* THIRD DIV STARTS (PAY)*/}
             <div className="discover-icon-div">
-              <img src={pay_icon} className="discover-image" alt="discover" />
+              <div className="img-div">
+                <img src={pay_icon} className="pay-image" alt="discover" />
+              </div>
               <div className="discover-content">
                 <p className="discover-header">Pay</p>
                 <p className="discover-blurb">

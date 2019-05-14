@@ -122,6 +122,17 @@
   align-content: center;
 }
 
+.post-price {
+  font-size: 18px;
+  padding-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-weight: bold;
+  border-bottom: 1px solid $accent;
+  padding-bottom: 8%;
+}
+
 .home-contact-influencer {
   display: flex;
   justify-content: center;
