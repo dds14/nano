@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import infographic from "../../Images/infographic.png";
+import "./Learn.scss";
 
 export default class Learn extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ export default class Learn extends Component {
   render() {
     return (
       <div>
-        <img src={infographic} />
+        <img className="infographic" src={infographic} />
       </div>
     );
   }
