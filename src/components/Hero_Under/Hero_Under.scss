@@ -8,26 +8,44 @@ a {
 .hero-under {
   border-bottom: 1px solid $accent;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   font-family: $font;
+}
+
+.under1 {
+  width: 100%;
+  height: 100vh;
+  opacity: 0.9;
 }
 
 .hero-under-right {
   // border: $border-test-blue;
   width: 50%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .under-right {
-  border: 1px solid orangered;
+  // border: 1px solid orangered;
   width: 100%;
-  height: 100%;
+  height: 20%;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 3%;
+}
+
+.under-icons {
+  // border: 2px solid greenyellow;
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-under-right {
@@ -35,10 +53,42 @@ a {
   height: 90vh;
 }
 
+.discover-icon-div {
+  // border: 1px solid red;
+  display: flex;
+  width: 60%;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24px;
+  margin-bottom: 7%;
+}
+
+.discover-image {
+  width: 6vw;
+  height: 9vh;
+  margin-right: 8%;
+}
+
+.discover-content {
+  // border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.discover-header {
+  font-size: 28px;
+}
+
+.discover-blurb {
+  font-size: 16px;
+  margin-top: 3%;
+  text-align: center;
+}
+
 .under-header {
-  //   border: 1px solid orangered;
+  // border: 1px solid orangered;
   width: 100%;
-  height: 35%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,12 +110,6 @@ a {
     width: 100%;
     display: flex;
   }
-}
-
-.under1 {
-  width: 100%;
-  height: 90vh;
-  opacity: 0.9;
 }
 
 .hero-button-1 {

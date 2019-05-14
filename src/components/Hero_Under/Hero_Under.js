@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./Hero_Under.scss";
 import logo from "../../Images/logo.png";
-import fb_icon from "../../Images/fb_icon.png";
+import discover_icon from "../../Images/discover_icon.png";
+import communicate_icon from "../../Images/communicate_icon.png";
+import pay_icon from "../../Images/pay_icon.png";
 
 export default class Hero extends Component {
   constructor(props) {
@@ -25,6 +27,45 @@ export default class Hero extends Component {
           <div className="under-right">
             <div className="under-header">
               <h1 className="under-h1">How It Works</h1>
+            </div>
+          </div>
+          <div className="under-icons">
+            <div className="discover-icon-div">
+              <img
+                src={discover_icon}
+                className="discover-image"
+                alt="discover"
+              />
+              <div className="discover-content">
+                <p className="discover-header">Discover</p>
+                <p className="discover-blurb">
+                  Find the perfect influncer to promote your brand.
+                </p>
+              </div>
+            </div>
+            {/* SECOND DIV STARTS (COMMUNICATE) */}
+            <div className="discover-icon-div">
+              <img
+                src={communicate_icon}
+                className="discover-image"
+                alt="discover"
+              />
+              <div className="discover-content">
+                <p className="discover-header">Contact</p>
+                <p className="discover-blurb">
+                  Communicate with influencers directly from our website.
+                </p>
+              </div>
+            </div>
+            {/* THIRD DIV STARTS (PAY)*/}
+            <div className="discover-icon-div">
+              <img src={pay_icon} className="discover-image" alt="discover" />
+              <div className="discover-content">
+                <p className="discover-header">Pay</p>
+                <p className="discover-blurb">
+                  Negotiate a price based on our influencers' profiles.
+                </p>
+              </div>
             </div>
           </div>
         </div>
