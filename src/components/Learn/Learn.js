@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import infographic from "../../Images/infographic.png";
 
 export default class Learn extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export default class Learn extends Component {
   render() {
     return (
       <div>
-        <h1>Learn</h1>
+        <img src={infographic} />
       </div>
     );
   }
