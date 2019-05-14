@@ -10,7 +10,10 @@
   height: 100vh;
   font-family: $font;
   // background-image: url("../../Images/signup_background.png");
-  background-image: url("https://images.unsplash.com/photo-1533421455827-883c3a23c031?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+  // Ice OG pic below
+  // background-image: url("https://images.unsplash.com/photo-1533421455827-883c3a23c031?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+  // Snow image below
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/8de07a78403049.5ca3db6e39bef.jpg");
   // opacity: 0.9;
   background-repeat: none;
   background-size: cover;
@@ -116,6 +119,7 @@
   display: flex;
   z-index: 0;
   background-color: white;
+  opacity: 0.9;
   height: 80vh;
   width: 30%;
   height: 70%;
