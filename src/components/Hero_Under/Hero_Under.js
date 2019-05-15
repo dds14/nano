@@ -42,7 +42,7 @@ export default class Hero extends Component {
               <div className="discover-content">
                 <p className="discover-header">Discover</p>
                 <p className="discover-blurb">
-                  Find the perfect influncer to promote your brand.
+                  Find the perfect influencer to promote your brand.
                 </p>
               </div>
             </div>

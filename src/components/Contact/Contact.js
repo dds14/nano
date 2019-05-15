@@ -45,7 +45,7 @@ export default class Contact extends Component {
     return (
       <div className="contact">
         <form
-          autocomplete="off"
+          autoComplete="off"
           className="contact-form"
           onSubmit={this.handleSubmit}
         >
